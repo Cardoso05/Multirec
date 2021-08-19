@@ -61,7 +61,7 @@
 
                     </button>
 
-                    <button class="navbar-toggle" data-toggle="collapse" data="#search">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
 
                         <span class="sr-only">Toggle Search</span>
 
@@ -106,12 +106,37 @@
                     </a>
 
                     <div class="navbar-collapse collapse right">
+
                         <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">
 
                             <span class="sr-only">Toggle Search</span>
                             <i class="fa fa-search"></i>
 
                         </button>
+
+                    </div>
+
+                    <div class="collapse clearfix" id="search">
+
+                        <form method="get" action="results.php" class="navbar-form">
+
+                            <div class="input-group">
+                                <input class="form-control" name="user_query" placeholder="Search" required></input>
+
+                                <span class="input-group-btn">
+
+                                    <button type="submit" name="search" value="search" class="btn btn-primary">
+                                        
+                                        <i class="fa fa-search"></i>
+
+                                    </button>
+
+                                </span>
+
+                            </div>
+
+                        </form>
+
                     </div>
 
                 </div>
@@ -120,6 +145,56 @@
 
         </div>
 
+        <div class="container" id="slider">
+            
+            <div class="col-md-12">
+                
+                <div class="carousel slide" id="myCarousel" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+
+                        <li class="active" data-target="myCarousel" data-slide-to="0"></li>
+                        <li data-target="myCarousel" data-slide-to="1"></li>
+                        <li data-target="myCarousel" data-slide-to="2"></li>
+                        <li data-target="myCarousel" data-slide-to="3"></li>
+
+                    </ol>
+                    
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+
+                            <img src="admin_area/slides_images/slide-1.jpg" alt="Slider Image 1">
+
+                        </div>
+
+                        <div class="item">
+
+                            <img src="admin_area/slides_images/slide-1.jpg" alt="Slider Image 2">
+
+                        </div>
+
+
+                        <div class="item">
+
+                            <img src="admin_area/slides_images/slide-1.jpg" alt="Slider Image 3">
+
+                        </div>
+
+
+                        <div class="item">
+
+                            <img src="admin_area/slides_images/slide-1.jpg" alt="Slider Image 4">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
 
