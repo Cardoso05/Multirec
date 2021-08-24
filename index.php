@@ -281,6 +281,27 @@
 
     </div>
 
+    <div id="hot">
+
+        <div class="box">
+
+            <div class="container">
+
+                <div class="col-md-12">
+
+                    <h2>
+                        Our Latest Products
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
 
