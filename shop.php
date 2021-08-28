@@ -170,10 +170,10 @@
             <div class="col-md-3">
 
                 <?php 
+                
+                        include("includes/sidebar.php");
             
-                    include("includes/sidebar.php");
-        
-                ?>
+                    ?>
 
             </div>
 
@@ -476,7 +476,7 @@
                         </div>
                     </div>
 
-                    <div class="pages">
+                    <div class="center">
                         <ul class="pagination">
                             <li><a href="#">First Page</a></li>
                             <li><a href="#">1</a></li>
@@ -497,10 +497,10 @@
     </div>
 
     <?php 
-            
-        include("includes/footer.php");
-    
-    ?>
+                
+            include("includes/footer.php");
+        
+        ?>
 
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
