@@ -92,7 +92,7 @@
                             <a href="cart.php">Shopping Cart</a>
                         </li>
                         <li>
-                            <a href="Contact Us"></a>
+                            <a href="contact.php">Contact Us</a>
                         </li>
 
                     </ul>
