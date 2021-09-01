@@ -22,7 +22,7 @@
                     </li>
 
                     <li>
-                        <a href="my_account.php">My Account</a>
+                        <a href="check.php">My Account</a>
                     </li>
 
                 </ul>

@@ -86,7 +86,7 @@
                             <a href="shop.php">Shop</a>
                         </li>
                         <li>
-                            <a href="checkout.php">My account</a>
+                            <a href="customer/my_account.php">My account</a>
                         </li>
                         <li>
                             <a href="cart.php">Shopping Cart</a>

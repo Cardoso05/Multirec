@@ -30,7 +30,7 @@
             <div class="col-md-6">
                 <ul class="menu">
                     <li><a href="customer_register.php">Register</a></li>
-                    <li><a href="checkout.php">My Account</a></li>
+                    <li><a href="customer/my_account.php">My Account</a></li>
                     <li><a href="cart.php">Go to Cart</a></li>
                     <li><a href="login.php">Login</a></li>
                 </ul>
@@ -86,7 +86,7 @@
                             <a href="shop.php">Shop</a>
                         </li>
                         <li>
-                            <a href="checkout.php">My account</a>
+                            <a href="customer/my_account.php">My account</a>
                         </li>
                         <li class="active">
                             <a href="cart.php">Shopping Cart</a>

@@ -29,10 +29,10 @@
 
             <div class="col-md-6">
                 <ul class="menu">
-                    <li><a href="customer_register.php">Register</a></li>
-                    <li><a href="customer/my_account.php">My Account</a></li>
-                    <li><a href="cart.php">Go to Cart</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="../customer_register.php">Register</a></li>
+                    <li><a href="my_account.php">My Account</a></li>
+                    <li><a href="../cart.php">Go to Cart</a></li>
+                    <li><a href="../login.php">Login</a></li>
                 </ul>
             </div>
 
@@ -80,19 +80,19 @@
                     <ul class="nav navbar-nav left">
 
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="../index.php">Home</a>
                         </li>
                         <li>
-                            <a href="shop.php">Shop</a>
-                        </li>
-                        <li>
-                            <a href="customer/my_account.php">My account</a>
-                        </li>
-                        <li>
-                            <a href="cart.php">Shopping Cart</a>
+                            <a href="../shop.php">Shop</a>
                         </li>
                         <li class="active">
-                            <a href="contact.php">Contact Us</a>
+                            <a href="checkout.php">My account</a>
+                        </li>
+                        <li>
+                            <a href="../cart.php">Shopping Cart</a>
+                        </li>
+                        <li>
+                            <a href="../contact.php">Contact Us</a>
                         </li>
 
                     </ul>
@@ -160,7 +160,7 @@
                     </li>
 
                     <li>
-                        Contact Us
+                        My Account
                     </li>
 
                 </ul>
@@ -168,7 +168,6 @@
             </div>
 
             <div class="col-md-3">
-
 
                 <?php 
                 
@@ -178,88 +177,15 @@
 
             </div>
 
-            <div class="col-md-9">
-
-                <div class="box">
-
-                    <div class="box-header">
-
-                        <div class="center">
-
-                            <h2> Fell free to Contact Us</h2>
-
-                            <p class="text-muted">
-
-                                If you have any questions, fell free to contact us. Our Customer Service work
-                                <strong>24/7</strong>
-
-                            </p>
-
-                        </div>
-
-                        <form action="contact.php" method="post">
-
-                            <div class="form-group">
-
-                                <label>Name</label>
-
-                                <input type="text" class="form-control" name="name" required>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label>Email</label>
-
-                                <input type="text" class="form-control" name="email" required>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label>Subject</label>
-
-                                <input type="text" class="form-control" name="subject" required>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label>Message</label>
-
-                                <textarea name="message" class="form-control" required></textarea>
-
-                            </div>
-
-
-                            <div class="text-center">
-
-                                <button type="submit" name="submit" class="btn btn-primary">
-
-                                    <i class="fa fa-user-md"></i> Send Message
-
-                                </button>
-
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
 
         </div>
 
     </div>
 
     <?php 
-        
+            
         include("includes/footer.php");
-
+    
     ?>
 
     <script src="js/jquery-331.min.js"></script>
