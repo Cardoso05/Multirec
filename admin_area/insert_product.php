@@ -14,7 +14,7 @@ include("includes/db.php");
 
 </head>
 
-<body>
+<body class="container">
 
     <div class="row">
         <!-- row Begin -->
@@ -132,7 +132,7 @@ include("includes/db.php");
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
 
-                            <select name="product_cat" class="form-control">
+                            <select name="cat" class="form-control">
                                 <!-- form-control Begin -->
 
                                 <option> Select a Category </option>
@@ -226,7 +226,7 @@ include("includes/db.php");
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
 
-                            <input type="text" name="product_keyworeds" class="form-control" required>
+                            <input type="text" name="product_keywords" class="form-control" required>
 
                         </div><!-- col-md-6 Finish -->
 
@@ -304,7 +304,20 @@ if (isset($_POST['submit'])) {
     move_uploaded_file($temp_name1, "product_images/$product_img1");
     move_uploaded_file($temp_name2, "product_images/$product_img2");
     move_uploaded_file($temp_name3, "product_images/$product_img3");
+
+    $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3',$product_price,'$product_keywords','$product_desc')";
+
+    $run_product = mysqli_query($con, $insert_product);
+
+    if ($run_product) {
+
+        echo "<script>alert('Product has been inserted sucefully');</script>";
+    } else {
+        echo "<script>window.open('insert_product.php','_self');</script>";
+    }
 }
+
+
 
 
 ?>
