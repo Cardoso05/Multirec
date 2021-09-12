@@ -149,7 +149,7 @@ include("includes/header.php");
 
             </div><!-- row Finish -->
 
-            <center>
+            <div style="text-align: center;">
                 <ul class="pagination">
                     <!-- pagination Begin -->
                     <?php
@@ -200,16 +200,14 @@ include("includes/header.php");
             ?>
 
                 </ul><!-- pagination Finish -->
-            </center>
+            </div>
 
-            <?php
-
-
-            ?>
+            <?php getpcatpro(); ?>
 
         </div><!-- col-md-9 Finish -->
 
     </div><!-- container Finish -->
+
 </div><!-- #content Finish -->
 
 <?php
