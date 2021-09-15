@@ -208,7 +208,7 @@ function getpcatpro()
 
             echo "
             
-                <div class='col-md-6 col-sm-6 center-responsive'>
+                <div class='col-md-4 col-sm-6 center-responsive'>
         
                     <div class='product'>
             
