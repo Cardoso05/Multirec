@@ -81,7 +81,7 @@ include("includes/header.php")
                 <!-- left carousel-control Begin -->
 
                 <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Nexta</span>
 
             </a><!-- left carousel-control Finish -->
 
