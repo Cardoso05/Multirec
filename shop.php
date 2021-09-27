@@ -202,7 +202,8 @@ include("includes/header.php");
                 </ul><!-- pagination Finish -->
             </div>
 
-            <?php getpcatpro(); ?>
+            <?php getpcatpro();
+            getcatpro(); ?>
 
         </div><!-- col-md-9 Finish -->
 
