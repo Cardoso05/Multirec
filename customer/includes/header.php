@@ -1,5 +1,6 @@
 <?php
 include("includes/db.php");
+include("functions/functions.php");
 ?>
 
 
@@ -28,7 +29,7 @@ include("includes/db.php");
                 <!-- col-md-6 offer Begin -->
 
                 <a href="#" class="btn btn-success btn-sm">Welcome</a>
-                <a href="checkout.php">4 Items In Your Cart | Total Price: $300 </a>
+                <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
 
             </div><!-- col-md-6 offer Finish -->
 
@@ -130,7 +131,7 @@ include("includes/db.php");
 
                     <i class="fa fa-shopping-cart"></i>
 
-                    <span>4 Items In Your Cart</span>
+                    <span><?php items(); ?> Items In Your Cart</span>
 
                 </a><!-- btn navbar-btn btn-primary Finish -->
 
