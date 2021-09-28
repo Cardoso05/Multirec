@@ -123,7 +123,7 @@ include("includes/header.php");
 
                             <div class="form-group">
                                 <!-- form-group Begin -->
-                                <label class="col-md-5 control-label">Product Size</label>
+                                <label for="" class="col-md-5 control-label">Product Size</label>
 
                                 <div class="col-md-7">
                                     <!-- col-md-7 Begin -->
@@ -132,8 +132,9 @@ include("includes/header.php");
                                         oninput="setCustomValidity('')"
                                         oninvalid="setCustomValidity('Must pick 1 size for the product')">
                                         <!-- form-control Begin -->
+                                        <!-- form-control Begin -->
 
-                                        <option disabled selected>Select a Size</option>
+                                        <option>Select a Size</option>
                                         <option>Small</option>
                                         <option>Medium</option>
                                         <option>Large</option>
