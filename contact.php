@@ -110,6 +110,40 @@ include("includes/header.php")
 
                     </form><!-- form Finish -->
 
+                    <?php
+
+                    if (isset($_POST['submit'])) {
+                        //admin receives message with this
+
+                        $sender_name = $_POST['name'];
+
+                        $sender_email = $_POST['email'];
+
+                        $sender_subject = $_POST['subject'];
+
+                        $sender_message = $_POST['message'];
+
+                        $receiver_email = "matheuszekka@gmail.com";
+
+                        mail($receiver_email, $sender_email, $sender_subject, $sender_message);
+
+                        /// auto reply to sender with this ///
+
+                        $email = $_POST['email'];
+
+                        $subject = "Welcome to my website";
+
+                        $msg = "Thanks for sending us message. ASAP we will replay your message";
+
+                        $from = "matheuszekka@gmail.com";
+
+                        mail($email . $subject, $msg, $from);
+
+                        echo "<h2>Your message has sent sucessfully </h2>";
+                    }
+
+                    ?>
+
                 </div><!-- box-header Finish -->
 
             </div><!-- box Finish -->
