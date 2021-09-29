@@ -23,7 +23,21 @@
 
                 <ul>
                     <!-- ul Begin -->
-                    <li><a href="checkout.php">Login</a></li>
+                    <li>
+                        <a href="checkout.php">
+                            <?php
+                            if (!isset($_SESSION['customer_email'])) {
+
+                                echo "<a href='checkout.php'> Login </a>";
+                            } else {
+
+                                echo "<a href='checkout.php?my_orders'> My Account </a>";
+                            }
+                            ?>
+                        </a>
+
+                    </li>
+
                     <li><a href="customer_register.php">Register</a></li>
                 </ul><!-- ul Finish -->
 
