@@ -91,13 +91,13 @@ if (isset($_POST['login'])) {
 
     $select_cart = "select * from cart where ip_add='$get_ip'";
 
-    $run_cart = mysqli_query($con, $select_customer);
+    $run_cart = mysqli_query($con, $select_cart);
 
     $check_cart = mysqli_num_rows($run_cart);
 
     if ($check_customer == 0) {
 
-        echo "<script>alert('Your email or password is wrong');</script>";
+        echo "<script>alert('Your email or password is wrong')</script>";
 
         exit();
     }
@@ -106,16 +106,16 @@ if (isset($_POST['login'])) {
 
         $_SESSION['customer_email'] = $customer_email;
 
-        echo "<script>alert('You are logged in');</script>";
+        echo "<script>alert('You are Logged in')</script>";
 
-        echo "<script>window.open('customer/my_account.php?my_orders','_self');</script>";
+        echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
     } else {
 
         $_SESSION['customer_email'] = $customer_email;
 
-        echo "<script>alert('You are logged in');</script>";
+        echo "<script>alert('You are Logged in')</script>";
 
-        echo "<script>window.open('checkout.php','_self');</script>";
+        echo "<script>window.open('checkout.php','_self')</script>";
     }
 }
 

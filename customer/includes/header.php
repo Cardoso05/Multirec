@@ -94,7 +94,7 @@ if (isset($_GET['pro_id'])) {
                         <a href="../customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="../checkout.php">My Account</a>
+                        <a href="checkout.php">My Account</a>
                     </li>
                     <li>
                         <a href="../cart.php">Go To Cart</a>
@@ -172,7 +172,7 @@ if (isset($_GET['pro_id'])) {
                         <li class="<?php if ($active == 'Account') {
                                         echo "active";
                                     } ?>">
-                            <a href="customer/my_account.php">My Account</a>
+                            <a href="my_account.php">My Account</a>
                         </li>
                         <li>
                             <a href="../cart.php">Shopping Cart</a>
@@ -185,7 +185,7 @@ if (isset($_GET['pro_id'])) {
 
                 </div><!-- padding-nav Finish -->
 
-                <a href="cart.php" class="btn navbar-btn btn-primary right">
+                <a href="../cart.php" class="btn navbar-btn btn-primary right">
                     <!-- btn navbar-btn btn-primary Begin -->
 
                     <i class="fa fa-shopping-cart"></i>
