@@ -49,6 +49,6 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
 
         echo "<script>alert('Your orders has been submited, Thanks');</script>";
 
-        echo "<script>window.open(customer/my_account.php?my_orders'.'_self');</script>";
+        echo "<script>window.open('customer/my_account.php?my_orders','_self');</script>";
     }
 }
