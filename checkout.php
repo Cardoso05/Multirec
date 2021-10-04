@@ -44,8 +44,10 @@ include("includes/header.php")
                 include("customer/customer_login.php");
             } else {
 
-                include("customer/my_account.php?my_orders");
+                include("payment_options.php");
             }
+
+            ?>
 
             ?>
 

@@ -98,7 +98,7 @@
 
                 <th> <?php echo $i ?> </th>
 
-                <td> <?php echo $due_amount ?> </td>
+                <td> $<?php echo $due_amount ?> </td>
 
                 <td> <?php echo $invoice_no ?> </td>
 
@@ -112,7 +112,7 @@
 
                 <td>
 
-                    <a href="confirm.php?order_id='<?php echo $order_id; ?>'" target="_blank"
+                    <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="_blank"
                         class="btn btn-primary btn-sm"> Confim Paid </a>
 
                 </td>
