@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+include("includes/db.php");
+
+
+if (!isset($_SESSION['admin_email'])) {
+    echo "<script>window.open('login.php','_self')</script>";
+} else {
+?>
+
 <div class="row">
     <!-- row-1 begin-->
     <div class="col-lg-12">
@@ -436,3 +447,7 @@
     </div><!-- col-md-4 finish-->
 
 </div><!-- row-3 finish-->
+<?php
+
+}
+?>

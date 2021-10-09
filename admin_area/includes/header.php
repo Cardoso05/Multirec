@@ -8,5 +8,4 @@
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
 </head>
