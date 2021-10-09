@@ -1,9 +1,5 @@
 <?php
 
-session_start();
-include("includes/db.php");
-
-
 if (!isset($_SESSION['admin_email'])) {
     echo "<script>window.open('login.php','_self')</script>";
 } else {
@@ -39,7 +35,7 @@ if (!isset($_SESSION['admin_email'])) {
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- dropdown-toggle begin -->
 
-                <i class="fa fa-user"></i> Mrghie <b class="caret"></b>
+                <i class="fa fa-user"></i> <?php echo $admin_name; ?> <b class="caret"></b>
 
             </a><!-- dropdown-toggle finish -->
 
@@ -47,7 +43,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <!-- dropdown-menu begin -->
                 <li>
                     <!-- li begin -->
-                    <a href="index.php?user_profile">
+                    <a href="index.php?user_profile=<?php echo $admin_id; ?>">
                         <!-- a href begin -->
 
                         <i class="fa fa-fw fa-user"></i> Profile
@@ -62,7 +58,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <i class="fa fa-fw fa-envelope"></i> Products
 
-                        <span class="badge">7</span>
+                        <span class="badge"><?php echo $count_products; ?></span>
 
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
@@ -74,7 +70,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <i class="fa fa-fw fa-users"></i> Customers
 
-                        <span class="badge">11</span>
+                        <span class="badge"><?php echo $count_customers; ?></span>
 
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
@@ -86,7 +82,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <i class="fa fa-fw fa-gear"></i> Product Categories
 
-                        <span class="badge">4</span>
+                        <span class="badge"><?php echo $count_p_categories; ?></span>
 
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
@@ -266,7 +262,7 @@ if (!isset($_SESSION['admin_email'])) {
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?user_profile"> Edit User Profile </a>
+                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit User Profile </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 

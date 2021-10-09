@@ -1,9 +1,4 @@
 <?php
-
-session_start();
-include("includes/db.php");
-
-
 if (!isset($_SESSION['admin_email'])) {
     echo "<script>window.open('login.php','_self')</script>";
 } else {
@@ -57,7 +52,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="col-xs-9 text-right">
                         <!-- col-xs-9 text-right begin-->
 
-                        <div class="huge">17</div>
+                        <div class="huge"><?php echo $count_products ?></div>
 
                         <div>Products</div>
 
@@ -117,7 +112,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="col-xs-9 text-right">
                         <!-- col-xs-9 text-right begin-->
 
-                        <div class="huge">17</div>
+                        <div class="huge"><?php echo $count_customers ?></div>
 
                         <div>Customers</div>
 
@@ -176,7 +171,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="col-xs-9 text-right">
                         <!-- col-xs-9 text-right begin-->
 
-                        <div class="huge">5</div>
+                        <div class="huge"><?php echo $count_p_categories ?></div>
 
                         <div>Product Categories</div>
 
@@ -235,7 +230,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="col-xs-9 text-right">
                         <!-- col-xs-9 text-right begin-->
 
-                        <div class="huge">25</div>
+                        <div class="huge"><?php echo $count_pending_orders ?></div>
 
                         <div>Orders</div>
 
