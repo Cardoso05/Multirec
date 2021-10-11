@@ -20,6 +20,18 @@ if (!isset($_SESSION['admin_email'])) {
 
     $admin_name = $row_admin['admin_name'];
 
+    $admin_email = $row_admin['admin_email'];
+
+    $admin_image = $row_admin['admin_image'];
+
+    $admin_country = $row_admin['admin_country'];
+
+    $admin_about = $row_admin['admin_about'];
+
+    $admin_contact = $row_admin['admin_contact'];
+
+    $admin_job = $row_admin['admin_job'];
+
     $get_products = "select * from products";
 
     $run_products = mysqli_query($con, $get_products);
@@ -78,6 +90,9 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['dashboard'])) {
 
                         include("dashboard.php");
+                    }
+                    if (isset($_GET['insert_product'])) {
+                        include("insert_product.php");
                     }
 
 

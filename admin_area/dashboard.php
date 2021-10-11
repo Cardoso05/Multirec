@@ -312,58 +312,71 @@ if (!isset($_SESSION['admin_email'])) {
                         <tbody>
                             <!-- tbody begin-->
 
+                            <?php
+
+                                $i = 0;
+
+                                $get_order = "select * from pending_orders order by 1 DESC LIMIT 0,4";
+
+                                $run_order = mysqli_query($con, $get_order);
+
+                                while ($row_order = mysqli_fetch_array($run_order)) {
+
+                                    $order_id = $row_order['order_id'];
+
+                                    $c_id = $row_order['customer_id'];
+
+                                    $invoice_no = $row_order['invoice_no'];
+
+                                    $product_id = $row_order['product_id'];
+
+                                    $qty = $row_order['qty'];
+
+                                    $size = $row_order['size'];
+
+                                    $order_status = $row_order['order_status'];
+
+                                    $i++;
+                                ?>
                             <tr>
                                 <!-- tr begin-->
 
-                                <td> 1 </td>
-                                <td> zekkacardoso18@gmail.com </td>
-                                <td> 45545 </td>
-                                <td> 4 </td>
-                                <td> 2 </td>
-                                <td> large </td>
-                                <td> Pending </td>
+                                <td> <?php echo $order_id ?></td>
+                                <td>
+                                    <?php
+                                            $get_customer = "select * from customers where customer_id='$c_id'";
+
+                                            $run_customer = mysqli_query($con, $get_customer);
+
+                                            $row_customer = mysqli_fetch_array($run_customer);
+
+                                            $customer_email = $row_customer['customer_email'];
+
+                                            echo $customer_email;
+
+
+                                            ?>
+
+                                </td>
+                                <td> <?php echo $invoice_no ?> </td>
+                                <td> <?php echo $product_id ?> </td>
+                                <td> <?php echo $qty ?> </td>
+                                <td> <?php echo $size ?> </td>
+                                <td>
+                                    <?php
+
+                                            if ($order_status == 'Pending') {
+                                                echo $order_status = 'Pending';
+                                            } else {
+                                                echo $order_status = 'Complete';
+                                            }
+
+                                            ?>
+                                </td>
 
                             </tr><!-- tr finish-->
 
-                            <tr>
-                                <!-- tr begin-->
-
-                                <td> 1 </td>
-                                <td> zekkacardoso18@gmail.com </td>
-                                <td> 45545 </td>
-                                <td> 4 </td>
-                                <td> 2 </td>
-                                <td> large </td>
-                                <td> Pending </td>
-
-                            </tr><!-- tr finish-->
-
-                            <tr>
-                                <!-- tr begin-->
-
-                                <td> 1 </td>
-                                <td> zekkacardoso18@gmail.com </td>
-                                <td> 45545 </td>
-                                <td> 4 </td>
-                                <td> 2 </td>
-                                <td> large </td>
-                                <td> Pending </td>
-
-                            </tr><!-- tr finish-->
-
-                            <tr>
-                                <!-- tr begin-->
-
-                                <td> 1 </td>
-                                <td> zekkacardoso18@gmail.com </td>
-                                <td> 45545 </td>
-                                <td> 4 </td>
-                                <td> 2 </td>
-                                <td> large </td>
-                                <td> Pending </td>
-
-                            </tr><!-- tr finish-->
-
+                            <?php } ?>
                         </tbody><!-- tbody finish-->
 
                     </table><!-- table table-hover table-striped table-bordered finish-->
@@ -400,13 +413,13 @@ if (!isset($_SESSION['admin_email'])) {
                 <div class="md-md thumb-info">
                     <!-- md-md thumb-info begin-->
 
-                    <img src="admin_images/erika.jpg" alt="" class="img-responsive">
+                    <img src="admin_images/<?php echo $admin_image ?>" alt="" class="img-responsive">
 
                     <div class="thumb-info-title">
                         <!-- thumb-info-title begin-->
 
-                        <span class="thumb-info-inner">MrGhie</span>
-                        <span class="thumb-info-type"> Web Developer</span>
+                        <span class="thumb-info-inner"><?php echo $admin_name ?></span>
+                        <span class="thumb-info-type"> <?php echo $admin_job ?></span>
 
                     </div><!-- thumb-info-title finish-->
 
@@ -418,9 +431,9 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="widget-content-expanded">
                         <!-- widget-content-expanded beign-->
 
-                        <i class="fa fa-user"></i> <span> Email: </span> zekkacardoso18@gmail.com<br>
-                        <i class="fa fa-flag"></i> <span> Country: </span> Brasil<br>
-                        <i class="fa fa-envelope"></i> <span> Contact: </span> (11) 98600-5144<br>
+                        <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email ?><br>
+                        <i class="fa fa-flag"></i> <span> Country: </span> <?php echo $admin_country ?><br>
+                        <i class="fa fa-envelope"></i> <span> Contact: </span> <?php echo $admin_contact ?><br>
 
                     </div><!-- widget-content-expanded finish-->
 
@@ -428,10 +441,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                     <h5 class="text-muted"> About Me </h5>
 
-                    <p> This aplication is created by medv media,if you willing to contact me, please click this link <a
-                            href="#">M-Dev-Media</a><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Molestias architecto aliquam doloremque! Temporibus, soluta atque? Ipsum labore maiores odit
-                        est! Omnis atque vero nobis eum quam dicta sit vel quos?</p>
+                    <p> <?php echo $admin_about ?></p>
 
                 </div><!-- md-md finish-->
 
