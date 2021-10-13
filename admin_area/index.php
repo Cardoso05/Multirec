@@ -130,6 +130,15 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['insert_slide'])) {
                         include("insert_slide.php");
                     }
+                    if (isset($_GET['view_slides'])) {
+                        include("view_slides.php");
+                    }
+                    if (isset($_GET['delete_slider'])) {
+                        include("delete_slider.php");
+                    }
+                    if (isset($_GET['edit_slider'])) {
+                        include("edit_slider.php");
+                    }
                     ?>
 
             </div><!-- container-fluid finish -->

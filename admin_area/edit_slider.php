@@ -5,6 +5,28 @@ if (!isset($_SESSION['admin_email'])) {
 } else {
 
 ?>
+
+<?php
+
+    if (isset($_GET['edit_slider'])) {
+
+        $edit_slide_id = $_GET['edit_slider'];
+
+        $edit_slide = "select * from slider where slide_id='$edit_slide_id'";
+
+        $run_edit_slide = mysqli_query($con, $edit_slide);
+
+        $row_edit_slide = mysqli_fetch_array($run_edit_slide);
+
+        $slide_id = $row_edit_slide['slide_id'];
+
+        $slide_name = $row_edit_slide['slide_name'];
+
+        $slide_image = $row_edit_slide['slide_image'];
+    }
+
+
+    ?>
 <div class="row">
     <!-- row 1 begin-->
 
@@ -16,7 +38,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Slide
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Slide
 
             </li>
 
@@ -41,7 +63,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Insert Slide
+                    <i class="fa fa-money fa-fw"></i> Edit Slide
 
                 </h3><!-- panel-title Finish -->
 
@@ -67,7 +89,8 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="text" name="slide_name" class="form-control">
+                            <input type="text" name="slide_name" class="form-control"
+                                value="<?php echo $slide_name; ?>">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -103,7 +126,13 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="submit" value="submit" name="submit" class="form-control btn btn-primary">
+                            <input type="submit" value="update" name="update" class="form-control btn btn-primary">
+
+                            <br>
+
+                            <br>
+
+                            <img src="slides_images/<?php echo $slide_image; ?>" class="img-responsive" alt="">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -121,7 +150,7 @@ if (!isset($_SESSION['admin_email'])) {
 
 <?php
 
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['update'])) {
 
         $slide_name = $_POST['slide_name'];
 
@@ -129,24 +158,16 @@ if (!isset($_SESSION['admin_email'])) {
 
         $tmp_name = $_FILES['slide_image']['tmp_name'];
 
-        $view_slides = "select * from slider";
+        move_uploaded_file($tmp_name, "slides_images/$slide_image");
 
-        $view_run_slide = mysqli_query($con, $view_slides);
+        $update_slide = "update slider set slide_name='$slide_name', slide_image ='$slide_image' where slide_id = '$slide_id'";
 
-        $count = mysqli_num_rows($view_run_slide);
+        $run_update_slide = mysqli_query($con, $update_slide);
 
-        if ($count < 4) {
+        if ($run_update_slide) {
 
-            move_uploaded_file($tmp_name, "slides_images/$slide_image");
-
-            $insert_slide = "insert into slider (slide_name,slide_image) values ('$slide_name','$slide_image')";
-
-            $run_slide = mysqli_query($con, $insert_slide);
-
-            echo "<script>alert('Your new slide image has been inserted')</script>";
-            echo "<script>window.open('index.php?view_slides','_self')</script>";
-        } else {
-            echo "<script>alert('Your have already 4 slides')</script>";
+            echo "<script> alert('Your Slide has been updated successfully');</script>";
+            echo "<script> window.open('index.php?view_slides','_self')</script>";
         }
     }
 
