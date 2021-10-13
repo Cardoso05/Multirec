@@ -109,6 +109,12 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['insert_p_cat'])) {
                         include("insert_p_cat.php");
                     }
+                    if (isset($_GET['delete_p_cat'])) {
+                        include("delete_p_cat.php");
+                    }
+                    if (isset($_GET['edit_p_cat'])) {
+                        include("edit_p_cat.php");
+                    }
                     ?>
 
             </div><!-- container-fluid finish -->

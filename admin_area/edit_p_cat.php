@@ -5,6 +5,26 @@ if (!isset($_SESSION['admin_email'])) {
 } else {
 
 ?>
+
+<?php
+
+    if (isset($_GET['edit_p_cat'])) {
+
+        $edit_p_cat_id = $_GET['edit_p_cat'];
+
+        $edit_p_cat_query = "select * from product_categories where p_cat_id='$edit_p_cat_id'";
+
+        $run_edit = mysqli_query($con, $edit_p_cat_query);
+
+        $row_edit = mysqli_fetch_array($run_edit);
+
+        $p_cat_id = $row_edit['p_cat_id'];
+
+        $p_cat_title = $row_edit['p_cat_title'];
+
+        $p_cat_desc = $row_edit['p_cat_desc'];
+    }
+    ?>
 <div class="row">
     <!-- row 1 begin-->
 
@@ -16,7 +36,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Product Category
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Product Category
 
             </li>
 
@@ -41,7 +61,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Insert Product Category
+                    <i class="fa fa-money fa-fw"></i> Edit Product Category
 
                 </h3><!-- panel-title Finish -->
 
@@ -67,7 +87,8 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="text" name="p_cat_title" class="form-control">
+                            <input value="<?php echo $p_cat_title ?>" type="text" name="p_cat_title"
+                                class="form-control">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -87,7 +108,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <!-- col-md-6 Begin-->
 
                             <textarea type='text' name="p_cat_desc" id="" cols="30" rows="10"
-                                class="form-control"></textarea>
+                                class="form-control"><?php echo $p_cat_desc ?></textarea>
 
                         </div><!-- col-md-6 Finish-->
 
@@ -106,7 +127,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="submit" value="submit" name="submit" class="form-control btn btn-primary">
+                            <input type="submit" value="update" name="update" class="form-control btn btn-primary">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -124,19 +145,20 @@ if (!isset($_SESSION['admin_email'])) {
 
 <?php
 
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['update'])) {
 
         $p_cat_title = $_POST['p_cat_title'];
 
         $p_cat_desc = $_POST['p_cat_desc'];
 
-        $insert_p_cat = "insert into product_categories (p_cat_title,p_cat_desc) values ('$p_cat_title','$p_cat_desc')";
+        $update_p_cat = " update product_categories set p_cat_id = '$p_cat_id', p_cat_title = '$p_cat_title', p_cat_desc='$p_cat_desc' where p_cat_id = '$p_cat_id'";
 
-        $run_p_cat = mysqli_query($con, $insert_p_cat);
+        $run_update = mysqli_query($con, $update_p_cat);
 
-        if ($run_p_cat) {
-            echo "<script>alert('Your New Porduct Category Has Been Inserted')</script>";
-            echo "<script>window.open('index.php?view_p_cats','_self')";
+        if ($run_update) {
+
+            echo "<script>alert('Your product category has been updated succesfully')</script>";
+            echo "<script>window.open('index.php?view_p_cats','_self')</script>";
         }
     }
 
