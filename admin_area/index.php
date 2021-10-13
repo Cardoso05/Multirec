@@ -103,6 +103,12 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['edit_product'])) {
                         include("edit_product.php");
                     }
+                    if (isset($_GET['view_p_cats'])) {
+                        include("view_p_cats.php");
+                    }
+                    if (isset($_GET['insert_p_cat'])) {
+                        include("insert_p_cat.php");
+                    }
                     ?>
 
             </div><!-- container-fluid finish -->
