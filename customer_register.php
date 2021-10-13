@@ -181,7 +181,7 @@ if (isset($_POST['register'])) {
 
     $c_image = $_FILES['c_image']['name'];
 
-    $c_image_tmp = $_FILES['c_image']['name'];
+    $c_image_tmp = $_FILES['c_image']['tmp_name'];
 
     $c_ip = getRealIpUser();
 

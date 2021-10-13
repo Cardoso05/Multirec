@@ -139,6 +139,15 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['edit_slider'])) {
                         include("edit_slider.php");
                     }
+                    if (isset($_GET['view_customers'])) {
+                        include("view_customers.php");
+                    }
+                    if (isset($_GET['delete_customer'])) {
+                        include("delete_customer.php");
+                    }
+                    if (isset($_GET['view_orders'])) {
+                        include("view_orders.php");
+                    }
                     ?>
 
             </div><!-- container-fluid finish -->
