@@ -78,6 +78,26 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
+
+                            Slide Url
+
+                        </label><!-- control-label col-md-3 Finish-->
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin-->
+
+                            <input type="text" name="slide_url" class="form-control">
+
+                        </div><!-- col-md-6 Finish-->
+
+                    </div><!-- form-group Finish -->
+
+
+                    <div class="form-group">
+                        <!-- form-group begin -->
+
+                        <label for="" class="control-label col-md-3">
+                            <!-- control-label col-md-3 Begin-->
                             Slide Image
 
                         </label><!-- control-label col-md-3 Finish-->
@@ -125,6 +145,8 @@ if (!isset($_SESSION['admin_email'])) {
 
         $slide_name = $_POST['slide_name'];
 
+        $slide_url = $_POST['slide_url'];
+
         $slide_image = $_FILES['slide_image']['name'];
 
         $tmp_name = $_FILES['slide_image']['tmp_name'];
@@ -139,7 +161,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             move_uploaded_file($tmp_name, "slides_images/$slide_image");
 
-            $insert_slide = "insert into slider (slide_name,slide_image) values ('$slide_name','$slide_image')";
+            $insert_slide = "insert into slider (slide_name,slide_image,slide_url) values ('$slide_name','$slide_image','$slide_url')";
 
             $run_slide = mysqli_query($con, $insert_slide);
 

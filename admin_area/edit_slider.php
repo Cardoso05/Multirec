@@ -23,6 +23,8 @@ if (!isset($_SESSION['admin_email'])) {
         $slide_name = $row_edit_slide['slide_name'];
 
         $slide_image = $row_edit_slide['slide_image'];
+
+        $slide_url = $row_edit_slide['slide_url'];
     }
 
 
@@ -101,6 +103,25 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
+
+                            Slide Url
+
+                        </label><!-- control-label col-md-3 Finish-->
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin-->
+
+                            <input type="text" name="slide_url" class="form-control" value="<?php echo $slide_url; ?>">
+
+                        </div><!-- col-md-6 Finish-->
+
+                    </div><!-- form-group Finish -->
+
+                    <div class="form-group">
+                        <!-- form-group begin -->
+
+                        <label for="" class="control-label col-md-3">
+                            <!-- control-label col-md-3 Begin-->
                             Slide Image
 
                         </label><!-- control-label col-md-3 Finish-->
@@ -160,7 +181,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         move_uploaded_file($tmp_name, "slides_images/$slide_image");
 
-        $update_slide = "update slider set slide_name='$slide_name', slide_image ='$slide_image' where slide_id = '$slide_id'";
+        $update_slide = "update slider set slide_name='$slide_name', slide_image ='$slide_image', slide_url ='$slide_url' where slide_id = '$slide_id'";
 
         $run_update_slide = mysqli_query($con, $update_slide);
 

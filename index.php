@@ -36,11 +36,14 @@ include("includes/header.php")
                 while ($row_slides = mysqli_fetch_array($run_slider)) {
                     $slide_name = $row_slides['slide_name'];
                     $slide_image = $row_slides['slide_image'];
+                    $slide_url = $row_slides['slide_url'];
 
                     echo "
                                 
                                 <div class='item active'>
-                                    <img src='admin_area/slides_images/$slide_image'>
+                                    <a href='$slide_url'>
+                                        <img src='admin_area/slides_images/$slide_image'>
+                                    </a>
                                 </div>
 
 
@@ -54,12 +57,15 @@ include("includes/header.php")
                 while ($row_slides = mysqli_fetch_array($run_slider)) {
                     $slide_name = $row_slides['slide_name'];
                     $slide_image = $row_slides['slide_image'];
+                    $slide_url = $row_slides['slide_url'];
 
                     echo "
                                 
-                                <div class='item'>
+                            <div class='item '>
+                                <a href='$slide_url'>
                                     <img src='admin_area/slides_images/$slide_image'>
-                                </div>
+                                </a>
+                            </div>
 
 
                             ";
