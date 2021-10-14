@@ -127,7 +127,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label"> Categoriy</label>
+                        <label class="col-md-3 control-label"> Category</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
