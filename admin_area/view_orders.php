@@ -60,13 +60,14 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr Begin-->
 
-                                <th> Order No: </th>
+                                <th> No: </th>
                                 <th> Customer Email: </th>
                                 <th> Invoice No: </th>
                                 <th> Product Name: </th>
                                 <th> Product Qty: </th>
                                 <th> Product Size: </th>
                                 <th> Order Date: </th>
+                                <th> Total Amount: </th>
                                 <th> Status: </th>
                                 <th> Delete: </th>
 
@@ -85,21 +86,47 @@ if (!isset($_SESSION['admin_email'])) {
 
                                 $run_orders = mysqli_query($con, $get_orders);
 
-                                while ($row_orders = mysqli_fetch_array($run_orders)) {
+                                while ($row_order = mysqli_fetch_array($run_orders)) {
 
-                                    $order_id = $row_c['order_id'];
+                                    $order_id = $row_order['order_id'];
 
-                                    $order_name = $row_c['customer_id'];
+                                    $c_id = $row_order['customer_id'];
 
-                                    $c_email = $row_c['invoice_no'];
+                                    $invoice_no = $row_order['invoice_no'];
 
-                                    $c_country = $row_c['product_id'];
+                                    $product_id = $row_order['product_id'];
 
-                                    $c_city = $row_c['qty'];
+                                    $qty = $row_order['qty'];
 
-                                    $c_address = $row_c['size'];
+                                    $size = $row_order['size'];
 
-                                    $c_image = $row_c['order_status'];
+                                    $order_status = $row_order['order_status'];
+
+                                    $get_products = "select * from products where product_id='$product_id'";
+
+                                    $run_products = mysqli_query($con, $get_products);
+
+                                    $row_products = mysqli_fetch_array($run_products);
+
+                                    $product_title = $row_products['product_title'];
+
+                                    $get_customer = "select * from customers where customer_id='$c_id'";
+
+                                    $run_customer = mysqli_query($con, $get_customer);
+
+                                    $row_customer = mysqli_fetch_array($run_customer);
+
+                                    $customer_email = $row_customer['customer_email'];
+
+                                    $get_c_order = "select * from customer_orders where order_id='$order_id'";
+
+                                    $run_c_order = mysqli_query($con, $get_c_order);
+
+                                    $row_c_order = mysqli_fetch_array($run_c_order);
+
+                                    $order_date = $row_c_order['order_date'];
+
+                                    $order_amount = $row_c_order['due_amount'];
 
                                     $i++;
 
@@ -109,17 +136,29 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr Begin -->
                                 <td><?php echo $i; ?></td>
-                                <td><?php echo $c_name; ?></td>
-                                <td> <img src="../customer/customer_images/<?php echo $c_image; ?>" width="60"
-                                        height="60" alt="">
-                                </td>
-                                <td><?php echo $c_email; ?></td>
-                                <td><?php echo $c_country; ?></td>
-                                <td><?php echo $c_city; ?></td>
-                                <td><?php echo $c_address; ?></td>
-                                <td><?php echo $c_contact; ?></td>
+                                <td><?php echo $customer_email; ?></td>
+                                <td><?php echo $invoice_no; ?></td>
+                                <td><?php echo $product_title; ?></td>
+                                <td><?php echo $qty; ?></td>
+                                <td><?php echo $size; ?></td>
+                                <td><?php echo $order_date; ?></td>
+                                <td><?php echo $order_amount; ?></td>
                                 <td>
-                                    <a href="index.php?delete_customer=<?php echo $c_id; ?>">
+                                    <?php
+
+                                            if ($order_status == 'Pending') {
+
+                                                echo $order_status = 'Pending';
+                                            } else {
+                                                echo $order_status = 'Complete';
+                                            }
+
+
+
+                                            ?>
+                                </td>
+                                <td>
+                                    <a href="index.php?delete_order=<?php echo $order_id; ?>">
 
                                         <i class="fa fa-trash-o"></i> Delete
 

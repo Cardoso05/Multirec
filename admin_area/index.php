@@ -148,6 +148,9 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['view_orders'])) {
                         include("view_orders.php");
                     }
+                    if (isset($_GET['delete_order'])) {
+                        include("delete_order.php");
+                    }
                     ?>
 
             </div><!-- container-fluid finish -->
