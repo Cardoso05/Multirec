@@ -181,6 +181,19 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['delete_box'])) {
                         include("delete_box.php");
                     }
+                    if (isset($_GET['insert_term'])) {
+                        include("insert_terms.php");
+                    }
+                    if (isset($_GET['view_terms'])) {
+                        include("view_terms.php");
+                    }
+                    if (isset($_GET['delete_terms'])) {
+                        include("delete_term.php");
+                    }
+                    if (isset($_GET['edit_term'])) {
+                        include("edit_term.php");
+                    }
+
                     ?>
 
             </div><!-- container-fluid finish -->

@@ -51,6 +51,9 @@
                             ?>
                         </a>
                     </li>
+
+                    <li><a href="../terms.php">Terms & Conditions</a></li>
+
                 </ul><!-- ul Finish -->
 
                 <hr class="hidden-md hidden-lg hidden-sm">
