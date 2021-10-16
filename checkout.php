@@ -49,7 +49,6 @@ include("includes/header.php")
 
             ?>
 
-            ?>
 
         </div><!-- col-md-9 Finish -->
 
