@@ -175,3 +175,6 @@
         </div><!-- col-md-6 Finish -->
     </div><!-- container Finish -->
 </div><!-- #copyright Finish -->
+
+<script src="js/bootstrap/jquery-331.min.js"></script>
+<script src="js/bootstrap/bootstrap-337.min.js"></script>

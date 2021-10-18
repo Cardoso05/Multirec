@@ -50,7 +50,8 @@ include("includes/header.php")
 
                     </center><!-- center Finish -->
 
-                    <form action="customer_register.php" method="post" enctype="multipart/form-data">
+                    <form name="formRegister" action="customer_register.php" method="post" enctype="multipart/form-data"
+                        onsubmit=" return validaRegister(this)">
                         <!-- form Begin -->
 
                         <div class="form-group">
@@ -153,8 +154,8 @@ include("includes/footer.php");
 
 ?>
 
-<script src="js/jquery-331.min.js"></script>
-<script src="js/bootstrap-337.min.js"></script>
+
+
 
 
 </body>

@@ -21,7 +21,7 @@
 
     </div><!-- box-header Finish -->
 
-    <form action="checkout.php" method="post">
+    <form name="formLogin" action="checkout.php" method="post" onsubmit=" return validaLogin(this)">
         <!-- form Begin -->
 
         <div class="form-group">
@@ -29,7 +29,7 @@
 
             <label> Email </label>
 
-            <input type="text" name="c_email" type="text" class="form-control" required>
+            <input type="text" id="c_email" name="c_email" type="text" class="form-control" required>
 
 
         </div><!-- form-group Finish -->
@@ -39,7 +39,7 @@
 
             <label> Password </label>
 
-            <input type="text" name="c_pass" type="password" class="form-control" required>
+            <input type="text" id="c_pass" name="c_pass" type="password" class="form-control" required>
 
 
         </div><!-- form-group Finish -->
