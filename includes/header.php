@@ -231,10 +231,12 @@ if (isset($_GET['pro_id'])) {
 
                 </div><!-- navbar-collapse collapse right Finish -->
 
-                <div class="collapse clearfix" id="search">
+                <div class=" <?php if ($active != 'Shop') {
+                                    echo 'collapse';
+                                } ?> clearfix" id="search">
                     <!-- collapse clearfix Begin -->
 
-                    <form method="get" action="results.php" class="navbar-form">
+                    <form method="get" action="shop.php" class="navbar-form">
                         <!-- navbar-form Begin -->
 
                         <div class="input-group">
