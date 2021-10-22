@@ -88,7 +88,6 @@ if (!isset($_SESSION['admin_email'])) {
                 <?php
 
                     if (isset($_GET['dashboard'])) {
-
                         include("dashboard.php");
                     }
                     if (isset($_GET['insert_product'])) {
