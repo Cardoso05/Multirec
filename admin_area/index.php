@@ -192,6 +192,9 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['edit_term'])) {
                         include("edit_term.php");
                     }
+                    if (isset($_GET['edit_css'])) {
+                        include("edit_css.php");
+                    }
 
                     ?>
 
