@@ -149,24 +149,80 @@ function getPCats()
 
     global $db;
 
-    $get_p_cats = "select * from product_categories";
+    $get_p_cat = "select * from product_categories where p_cat_top='yes'";
 
-    $run_p_cats = mysqli_query($db, $get_p_cats);
+    $run_p_cat = mysqli_query($db, $get_p_cat);
 
-    while ($row_p_cats = mysqli_fetch_array($run_p_cats)) {
+    while ($row_p_cat = mysqli_fetch_array($run_p_cat)) {
 
-        $p_cat_id = $row_p_cats['p_cat_id'];
+        $p_cat_id = $row_p_cat['p_cat_id'];
+        $p_cat_title = $row_p_cat['p_cat_title'];
+        $p_cat_image = $row_p_cat['p_cat_image'];
 
-        $p_cat_title = $row_p_cats['p_cat_title'];
+        if (!empty($p_cat_image)) {
+
+            $p_cat_image = "<img src='admin_area/other_images/$p_cat_image' width='20px'>&nbsp;";
+        }
 
         echo "
         
-            <li>
-            
-                <a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a>
-            
-            </li>
+        <li style='background: #ddd' class='checkbox checkbox-primary'>
         
+            <a>
+
+                <label>
+
+                    <input value='$p_cat_id' type='checkbox' class='get_manufacturer' name='manufacturer'>
+
+                    <span>
+                    $p_cat_image
+                    $p_cat_title
+                    </span>                    
+
+                </label>
+            
+            </a>
+        
+        
+        </li>
+        ";
+    }
+    $get_p_cat = "select * from product_categories where p_cat_top='no'";
+
+    $run_p_cat = mysqli_query($db, $get_p_cat);
+
+    while ($row_p_cat = mysqli_fetch_array($run_p_cat)) {
+
+        $p_cat_id = $row_p_cat['p_cat_id'];
+        $p_cat_title = $row_p_cat['p_cat_title'];
+        $p_cat_image = $row_p_cat['p_cat_image'];
+
+        if (!empty($p_cat_image)) {
+
+            $p_cat_image = "<img src='admin_area/other_images/$p_cat_image' width='20px'>&nbsp;";
+        }
+
+        echo "
+        
+        <li class='checkbox checkbox-primary'>
+        
+            <a>
+
+                <label>
+
+                    <input value='$p_cat_id' type='checkbox' class='get_manufacturer' name='manufacturer'>
+
+                    <span>
+                        $p_cat_image
+                        $p_cat_title
+                    </span>
+
+                </label>
+            
+            </a>
+        
+        
+        </li>
         ";
     }
 }
@@ -180,24 +236,80 @@ function getCats()
 
     global $db;
 
-    $get_cats = "select * from categories";
+    $get_category = "select * from categories where cat_top='yes'";
 
-    $run_cats = mysqli_query($db, $get_cats);
+    $run_category = mysqli_query($db, $get_category);
 
-    while ($row_cats = mysqli_fetch_array($run_cats)) {
+    while ($row_category = mysqli_fetch_array($run_category)) {
 
-        $cat_id = $row_cats['cat_id'];
+        $cat_id = $row_category['cat_id'];
+        $cat_title = $row_category['cat_title'];
+        $cat_image = $row_category['cat_image'];
 
-        $cat_title = $row_cats['cat_title'];
+        if (!empty($cat_image)) {
+
+            $cat_image = "<img src='admin_area/other_images/$cat_image' width='20px'>&nbsp;";
+        }
 
         echo "
         
-            <li>
-            
-                <a href='shop.php?cat=$cat_id'> $cat_title </a>
-            
-            </li>
+        <li style='background:#ddd' class='checkbox checkbox-primary'>
         
+            <a>
+
+                <label>
+
+                    <input value='$cat_id' type='checkbox' class='get_manufacturer' name='manufacturer'>
+
+                    <span>
+                    $cat_image
+                    $cat_title
+                    </span>
+
+                </label>
+            
+            </a>
+        
+        
+        </li>
+        ";
+    }
+    $get_category = "select * from categories where cat_top='no'";
+
+    $run_category = mysqli_query($db, $get_category);
+
+    while ($row_category = mysqli_fetch_array($run_category)) {
+
+        $cat_id = $row_category['cat_id'];
+        $cat_title = $row_category['cat_title'];
+        $cat_image = $row_category['cat_image'];
+
+        if (!empty($cat_image)) {
+
+            $cat_image = "<img src='admin_area/other_images/$cat_image' width='20px'>&nbsp;";
+        }
+
+        echo "
+        
+        <li class='checkbox checkbox-primary'>
+        
+            <a>
+
+                <label>
+
+                    <input value='$cat_id' type='checkbox' class='get_cat' name='cat'>
+
+                    <span>
+                        $cat_image
+                        $cat_title
+                    </span>
+
+                </label>
+            
+            </a>
+        
+        
+        </li>
         ";
     }
 }
@@ -504,3 +616,92 @@ function total_price()
 }
 
 /// finish total_price functions ///
+
+/// begin getManufactures ///
+
+function getManufactures()
+{
+    global $db;
+
+    $get_manufacturer = "select * from manufacturers where manufacturer_top='yes'";
+
+    $run_manufacturer = mysqli_query($db, $get_manufacturer);
+
+    while ($row_manufacturer = mysqli_fetch_array($run_manufacturer)) {
+
+        $manufacturer_id = $row_manufacturer['manufacturer_id'];
+        $manufacturer_title = $row_manufacturer['manufacturer_title'];
+        $manufacturer_image = $row_manufacturer['manufacturer_image'];
+
+        if (!empty($manufacturer_image)) {
+
+            $manufacturer_image = "<img src='admin_area/other_images/$manufacturer_image' width='20px'>&nbsp;";
+        }
+
+        echo "
+        
+        <li style='background:#ddd' class='checkbox checkbox-primary'>
+        
+            <a>
+
+                <label>
+
+                    <input value='$manufacturer_id' type='checkbox' class='get_manufacturer' name='manufacturer'>
+
+                    <span>
+                    $manufacturer_image
+                    $manufacturer_title
+                    </span>
+                    
+
+                </label>
+            
+            </a>
+        
+        
+        </li>
+        ";
+    }
+    $get_manufacturer = "select * from manufacturers where manufacturer_top='no'";
+
+    $run_manufacturer = mysqli_query($db, $get_manufacturer);
+
+    while ($row_manufacturer = mysqli_fetch_array($run_manufacturer)) {
+
+        $manufacturer_id = $row_manufacturer['manufacturer_id'];
+        $manufacturer_title = $row_manufacturer['manufacturer_title'];
+        $manufacturer_image = $row_manufacturer['manufacturer_image'];
+
+        if (!empty($manufacturer_image)) {
+
+            $manufacturer_image = "<img src='admin_area/other_images/$manufacturer_image' width='20px'>&nbsp;";
+        }
+
+        echo "
+        
+        <li class='checkbox checkbox-primary'>
+        
+            <a>
+
+                <label>
+
+                    <input value='$manufacturer_id' type='checkbox' class='get_manufacturer' name='manufacturer'>
+
+                    <span>
+                        $manufacturer_image
+                        $manufacturer_title
+                    </span>
+
+                </label>
+            
+            </a>
+        
+        
+        </li>
+        ";
+    }
+}
+
+
+
+/// finish getManufactures ///
