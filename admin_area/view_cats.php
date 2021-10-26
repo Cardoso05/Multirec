@@ -65,7 +65,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                                 <th> Category Id</th>
                                 <th> Category Title</th>
-                                <th> Category Desc</th>
+                                <th> Category Top</th>
                                 <th> Edit Category </th>
                                 <th> Delete Category </th>
 
@@ -90,7 +90,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                                     $cat_title = $row_cats['cat_title'];
 
-                                    $cat_desc = $row_cats['cat_desc'];
+                                    $cat_top = $row_cats['cat_top'];
 
                                     $i++;
 
@@ -101,7 +101,7 @@ if (!isset($_SESSION['admin_email'])) {
                                 <!-- tr Begin -->
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cat_title; ?></td>
-                                <td><?php echo $cat_desc; ?></td>
+                                <td><?php echo $cat_top; ?></td>
                                 <td>
                                     <a href="index.php?delete_cat=<?php echo $cat_id; ?>">
 

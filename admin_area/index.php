@@ -195,7 +195,18 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['edit_css'])) {
                         include("edit_css.php");
                     }
-
+                    if (isset($_GET['insert_manufacturer'])) {
+                        include("insert_manufacturer.php");
+                    }
+                    if (isset($_GET['view_manufacturers'])) {
+                        include("view_manufacturers.php");
+                    }
+                    if (isset($_GET['delete_manufacturer'])) {
+                        include("delete_manufacturer.php");
+                    }
+                    if (isset($_GET['edit_manufacturer'])) {
+                        include("edit_manufacturer.php");
+                    }
                     ?>
 
             </div><!-- container-fluid finish -->

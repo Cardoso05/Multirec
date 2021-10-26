@@ -461,5 +461,8 @@ body{
 .checkbox-primary input[type='checkbox']:focus + span::after{
     color: #fff;
 }                             
-
+.product a img.img-responsive{
+    max-height: 253px;
+    width: 100%;
+}
                             
