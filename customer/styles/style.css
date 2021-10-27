@@ -398,3 +398,6 @@ body{
 #copyright p{
     margin: 0px;
 }
+.img_customer{
+    max-width: 100%;
+}

@@ -57,7 +57,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Name</label>
+                            <label> Name</label>
 
                             <input type="text" class="form-control" name="c_name" required>
 
@@ -66,7 +66,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Email</label>
+                            <label> Email</label>
 
                             <input type="text" class="form-control" name="c_email" required>
 
@@ -75,7 +75,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Password</label>
+                            <label> Password</label>
 
                             <input type="password" class="form-control" name="c_pass" required>
 
@@ -84,7 +84,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Country</label>
+                            <label> Country</label>
 
                             <input type="text" class="form-control" name="c_country" required>
 
@@ -93,7 +93,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your City</label>
+                            <label> City</label>
 
                             <input type="text" class="form-control" name="c_city" required>
 
@@ -102,7 +102,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Contact</label>
+                            <label> Contact</label>
 
                             <input type="text" class="form-control" name="c_contact" required>
 
@@ -111,7 +111,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Address</label>
+                            <label> Address</label>
 
                             <input type="text" class="form-control" name="c_address" required>
 
@@ -120,7 +120,7 @@ include("includes/header.php")
                         <div class="form-group">
                             <!-- form-group Begin -->
 
-                            <label>Your Profile Picture</label>
+                            <label> Profile Picture</label>
 
                             <input type="file" class="form-control form-height-custom" name="c_image" required>
 
@@ -180,6 +180,8 @@ if (isset($_POST['register'])) {
 
     $c_address = $_POST['c_address'];
 
+    if (is_uploaded_file($_FILES['c_image']['tmp_name'])){
+
     $c_image = $_FILES['c_image']['name'];
 
     $c_image_tmp = $_FILES['c_image']['tmp_name'];
@@ -216,6 +218,7 @@ if (isset($_POST['register'])) {
         echo "<script>alert('You have been Registred Sucessfully')</script>";
 
         echo "<script>window.open('index.php','_self')</script>";
+    }
     }
 }
 

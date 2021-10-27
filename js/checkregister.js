@@ -15,7 +15,7 @@ function validaRegister(register) {
     if (
         pass == "" ||
         pass == null ||
-        pass.length < 10
+        pass.length < 7
     ) {
         alert("Preencha um senha correta");
         return false;

@@ -24,7 +24,7 @@
             
                 <center>
 
-                    <img src='customer_images/$customer_image' class='img_responsive'>
+                    <img src='customer_images/$customer_image' class='img-responsive ' >
 
                 </center>
 
