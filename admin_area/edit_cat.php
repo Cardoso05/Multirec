@@ -5,25 +5,24 @@ if (!isset($_SESSION['admin_email'])) {
 } else {
 
 ?>
-
 <?php
-
     if (isset($_GET['edit_cat'])) {
 
-        $edit_cat_id = $_GET['edit_cat'];
 
-        $edit_cat_query = "select * from categories where cat_id='$edit_cat_id'";
+        $edit_cat = $_GET['edit_cat'];
+        $get_cat = "select * from category where cat_id='$edit_cat'";
+        $run_cat = mysqli_query($con, $get_cat);
+        $row_cat = mysqli_fetch_array($run_cat);
 
-        $run_edit = mysqli_query($con, $edit_cat_query);
 
-        $row_edit = mysqli_fetch_array($run_edit);
-
-        $cat_id = $row_edit['cat_id'];
-
-        $cat_title = $row_edit['cat_title'];
-
-        $cat_desc = $row_edit['cat_desc'];
+        $c_id = $row_manufacturer['cat_id'];
+        $c_title = $row_manufacturer['cat_title'];
+        $c_top = $row_manufacturer['cat_top'];
+        $c_image = $row_manufacturer['cat_image'];
     }
+
+
+
     ?>
 <div class="row">
     <!-- row 1 begin-->
@@ -36,7 +35,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Category
+                <i class="fa fa-dashboard"></i> Dashboard / Update Category
 
             </li>
 
@@ -61,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Edit Category
+                    <i class="fa fa-money fa-fw"></i> Update Category
 
                 </h3><!-- panel-title Finish -->
 
@@ -71,7 +70,7 @@ if (!isset($_SESSION['admin_email'])) {
             <div class="panel-body">
                 <!-- panel-body begin -->
 
-                <form action="" method="post" class="form-horizontal">
+                <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                     <!-- form-horizontal begin -->
 
                     <div class="form-group">
@@ -87,7 +86,8 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input value="<?php echo $cat_title ?>" type="text" name="cat_title" class="form-control">
+                            <input type="text" name="cat_title" class="form-control"
+                                value="<?php echo $cat_title ?>">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -99,15 +99,52 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Category Description
+                            Chosse As Top Category
+
+                        </label><!-- control-label col-md-3 Finish-->
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin-->
+                            <?php if ($c_top == "yes") {
+                                    echo "
+                                <input checked type='radio' name='cat_top' value='yes'>
+                                <label for=''>Yes</label>
+    
+                                <input type='radio' name='cat_top' value='no'>
+                                <label for=''>No</label> ";
+                                } else {
+                                    echo "
+                                    <input type='radio' name='cat_top' value='yes'>
+                                    <label for=''>Yes</label>
+        
+                                    <input checked type='radio' name='cat_top' value='no'>
+                                    <label for=''>No</label> ";
+                                } ?>
+
+
+
+                        </div><!-- col-md-6 Finish-->
+
+                    </div><!-- form-group Finish -->
+
+
+                    <div class="form-group">
+                        <!-- form-group begin -->
+
+                        <label for="" class="control-label col-md-3">
+                            <!-- control-label col-md-3 Begin-->
+                            Category Image
 
                         </label><!-- control-label col-md-3 Finish-->
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <textarea type='text' name="cat_desc" id="" cols="30" rows="10"
-                                class="form-control"><?php echo $cat_desc ?></textarea>
+                            <input type="file" name="cat_image" class="form-control">
+
+                            <br>
+
+                            <img src="other_images/<?php echo $c_image; ?>" width="70px" height="70px" alt="">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -119,14 +156,12 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-
-
                         </label><!-- control-label col-md-3 Finish-->
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="submit" value="update" name="update" class="form-control btn btn-primary">
+                            <input type="submit" value="Update" name="submit" class="form-control btn btn-primary">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -144,22 +179,42 @@ if (!isset($_SESSION['admin_email'])) {
 
 <?php
 
-    if (isset($_POST['update'])) {
+    if (isset($_POST['submit'])) {
 
         $cat_title = $_POST['cat_title'];
 
-        $cat_desc = $_POST['cat_desc'];
+        $cat_top = $_POST['cat_top'];
 
-        $update_cat = " update categories set cat_id = '$cat_id',cat_title = '$cat_title', cat_desc='$cat_desc' where cat_id = '$cat_id'";
+        if (is_uploaded_file($_FILES['cat_image']['tmp_name'])) {
 
-        $run_update = mysqli_query($con, $update_cat);
+            $cat_image = $_FILES['cat_image']['name'];
 
-        if ($run_update) {
+            $tmp_name = $_FILES['cat_image']['tmp_name'];
 
-            echo "<script>alert('Your category has been updated succesfully')</script>";
-            echo "<script>window.open('index.php?view_cats','_self')</script>";
+            move_uploaded_file($tmp_name, "other_images/$cat_image");
+
+            $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top',cat_image='$cat_image' where cat_id ='$cat_id' ";
+
+            $run_cat = mysqli_query($con, $update_cat);
+
+            if ($run_cat) {
+                echo "<script>alert('Your new Category has been edited')</script>";
+                echo "<script>window.open('index.php?view_cats','_self')</script>";
+            }
+        } else {
+            $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top' where cat_id ='$cat_id' ";
+            
+
+            $run_cat = mysqli_query($con, $update_cat);
+
+            if ($run_cat) {
+
+                echo "<script>alert('Your new Category has been edited')</script>";
+                echo "<script>window.open('index.php?view_cats','_self')</script>";
+            }
         }
     }
+
 
     ?>
 

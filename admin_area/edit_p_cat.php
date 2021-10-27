@@ -22,7 +22,9 @@ if (!isset($_SESSION['admin_email'])) {
 
         $p_cat_title = $row_edit['p_cat_title'];
 
-        $p_cat_desc = $row_edit['p_cat_desc'];
+        $p_cat_top = $row_edit['p_cat_top'];
+
+        $p_cat_image = $row_edit['p_cat_image'];
     }
     ?>
 <div class="row">
@@ -36,7 +38,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Product Category
+                <i class="fa fa-dashboard"></i> Dashboard / Update Product Category
 
             </li>
 
@@ -61,7 +63,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Edit Product Category
+                    <i class="fa fa-money fa-fw"></i> Update Product Category
 
                 </h3><!-- panel-title Finish -->
 
@@ -71,7 +73,7 @@ if (!isset($_SESSION['admin_email'])) {
             <div class="panel-body">
                 <!-- panel-body begin -->
 
-                <form action="" method="post" class="form-horizontal">
+                <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                     <!-- form-horizontal begin -->
 
                     <div class="form-group">
@@ -87,8 +89,8 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input value="<?php echo $p_cat_title ?>" type="text" name="p_cat_title"
-                                class="form-control">
+                            <input type="text" name="p_cat_title" class="form-control"
+                                value="<?php echo $p_cat_title ?>">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -100,15 +102,52 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Product Category Description
+                            Chosse As Top Product Category
+
+                        </label><!-- control-label col-md-3 Finish-->
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin-->
+                            <?php if ($p_cat_top == "yes") {
+                                    echo "
+                                <input checked type='radio' name='p_cat_top' value='yes'>
+                                <label for=''>Yes</label>
+    
+                                <input type='radio' name='p_cat_top' value='no'>
+                                <label for=''>No</label> ";
+                                } else {
+                                    echo "
+                                    <input type='radio' name='p_cat_top' value='yes'>
+                                    <label for=''>Yes</label>
+        
+                                    <input checked type='radio' name='p_cat_top' value='no'>
+                                    <label for=''>No</label> ";
+                                } ?>
+
+
+
+                        </div><!-- col-md-6 Finish-->
+
+                    </div><!-- form-group Finish -->
+
+
+                    <div class="form-group">
+                        <!-- form-group begin -->
+
+                        <label for="" class="control-label col-md-3">
+                            <!-- control-label col-md-3 Begin-->
+                            Product Category Image
 
                         </label><!-- control-label col-md-3 Finish-->
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <textarea type='text' name="p_cat_desc" id="" cols="30" rows="10"
-                                class="form-control"><?php echo $p_cat_desc ?></textarea>
+                            <input type="file" name="p_cat_image" class="form-control">
+
+                            <br>
+
+                            <img src="other_images/<?php echo $p_cat_image; ?>" width="70px" height="70px" alt="">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -120,14 +159,12 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-
-
                         </label><!-- control-label col-md-3 Finish-->
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="submit" value="update" name="update" class="form-control btn btn-primary">
+                            <input type="submit" value="Update" name="submit" class="form-control btn btn-primary">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -145,22 +182,44 @@ if (!isset($_SESSION['admin_email'])) {
 
 <?php
 
-    if (isset($_POST['update'])) {
 
-        $p_cat_title = $_POST['p_cat_title'];
 
-        $p_cat_desc = $_POST['p_cat_desc'];
+if (isset($_POST['submit'])) {
 
-        $update_p_cat = " update product_categories set p_cat_id = '$p_cat_id', p_cat_title = '$p_cat_title', p_cat_desc='$p_cat_desc' where p_cat_id = '$p_cat_id'";
+    $p_cat_title = $_POST['p_cat_title'];
 
-        $run_update = mysqli_query($con, $update_p_cat);
+    $p_cat_top = $_POST['p_cat_top'];
 
-        if ($run_update) {
+    if (is_uploaded_file($_FILES['p_cat_image']['tmp_name'])) {
 
-            echo "<script>alert('Your product category has been updated succesfully')</script>";
+        $p_cat_image = $_FILES['p_cat_image']['name'];
+
+        $tmp_name = $_FILES['p_cat_image']['tmp_name'];
+
+        move_uploaded_file($tmp_name, "other_images/$p_cat_image");
+
+        $update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_top='$p_cat_top',p_cat_image='$p_cat_image' where p_cat_id ='$p_cat_id' ";
+
+        $run_p_cat = mysqli_query($con, $update_p_cat);
+
+        if ($run_p_cat) {
+            echo "<script>alert('Your new Product Category has been edited')</script>";
+            echo "<script>window.open('index.php?view_p_cats','_self')</script>";
+        }
+    } else {
+        $update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_top='$p_cat_top' where p_cat_id ='$p_cat_id' ";
+        
+        $run_p_cat = mysqli_query($con, $update_p_cat);
+
+        if ($run_p_cat) {
+
+            echo "<script>alert('Your new Product Category has been edited')</script>";
             echo "<script>window.open('index.php?view_p_cats','_self')</script>";
         }
     }
+}
+
+
 
     ?>
 
