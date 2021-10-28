@@ -9,7 +9,7 @@
             <div class="pull-right">
                 <!-- pull-right Begin -->
 
-                <a href="#" style="color:black;">
+                <a href="JavaScript:Void(0)" style="color:black;">
 
                     <span class="nav-toggle hide-show">
                         <!-- nav-toggle hide-show Begin -->
@@ -34,8 +34,8 @@
             <div class="input-group">
                 <!-- input-group Begin -->
 
-                <input type="text" class="form-control" id="dev-manufactures dev-table-filter"
-                    data-filters="#dev-category" data-action="filter" placeholder="Filter category">
+                <input type="text" class="form-control" id="dev-table-filter" data-filters="#dev-manufacturer"
+                    data-action="filter" placeholder="Filter Manufactures">
 
                 <a class="input-group-addon">
                     <!-- input-group-addon Begin -->
@@ -51,7 +51,7 @@
         <div class="panel-body scroll-menu">
             <!-- panel-body Begin -->
 
-            <ul class="nav nav-pills nav-stacked category-menu" id="dev-category">
+            <ul class="nav nav-pills nav-stacked category-menu" id="dev-manufacturer">
                 <!-- nav nav-pills nav-stacked category-menu Begin -->
 
                 <?php getManufactures() ?>
@@ -75,7 +75,7 @@
             <div class="pull-right">
                 <!-- pull-right Begin -->
 
-                <a href="#" style="color:black;">
+                <a href="JavaScript:Void(0)" style="color:black;">
 
                     <span class="nav-toggle hide-show">
                         <!-- nav-toggle hide-show Begin -->
@@ -141,7 +141,7 @@
             <div class="pull-right">
                 <!-- pull-right Begin -->
 
-                <a href="#" style="color:black;">
+                <a href="JavaScript:Void(0)" style="color:black;">
 
                     <span class="nav-toggle hide-show">
                         <!-- nav-toggle hide-show Begin -->
@@ -166,7 +166,7 @@
             <div class="input-group">
                 <!-- input-group Begin -->
 
-                <input type="text" class="form-control" id="dev-manufactures dev-table-filter" data-filters="#dev-p_cat"
+                <input type="text" class="form-control" id="dev-table-filter" data-filters="#dev-p-cat"
                     data-action="filter" placeholder="Filter Product Category">
 
                 <a class="input-group-addon">
@@ -183,7 +183,7 @@
         <div class="panel-body scroll-menu">
             <!-- panel-body Begin -->
 
-            <ul class="nav nav-pills nav-stacked category-menu" id="dev-category">
+            <ul class="nav nav-pills nav-stacked category-menu" id="dev-p-cat">
                 <!-- nav nav-pills nav-stacked category-menu Begin -->
 
                 <?php getPCats() ?>

@@ -10,15 +10,15 @@ if (!isset($_SESSION['admin_email'])) {
 
 
         $edit_cat = $_GET['edit_cat'];
-        $get_cat = "select * from category where cat_id='$edit_cat'";
+        $get_cat = "select * from categories where cat_id='$edit_cat'";
         $run_cat = mysqli_query($con, $get_cat);
         $row_cat = mysqli_fetch_array($run_cat);
 
 
-        $c_id = $row_manufacturer['cat_id'];
-        $c_title = $row_manufacturer['cat_title'];
-        $c_top = $row_manufacturer['cat_top'];
-        $c_image = $row_manufacturer['cat_image'];
+        $c_id = $row_cat['cat_id'];
+        $c_title = $row_cat['cat_title'];
+        $c_top = $row_cat['cat_top'];
+        $c_image = $row_cat['cat_image'];
     }
 
 
@@ -86,8 +86,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <input type="text" name="cat_title" class="form-control"
-                                value="<?php echo $cat_title ?>">
+                            <input type="text" name="cat_title" class="form-control" value="<?php echo $c_title; ?>">
 
                         </div><!-- col-md-6 Finish-->
 
@@ -191,9 +190,9 @@ if (!isset($_SESSION['admin_email'])) {
 
             $tmp_name = $_FILES['cat_image']['tmp_name'];
 
-            move_uploaded_file($tmp_name, "other_images/$cat_image");
+            move_uploaded_file($tmp_name, "cat_image/$cat_image");
 
-            $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top',cat_image='$cat_image' where cat_id ='$cat_id' ";
+            $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top',cat_image='$cat_image' where cat_id ='$c_id' ";
 
             $run_cat = mysqli_query($con, $update_cat);
 
@@ -202,8 +201,8 @@ if (!isset($_SESSION['admin_email'])) {
                 echo "<script>window.open('index.php?view_cats','_self')</script>";
             }
         } else {
-            $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top' where cat_id ='$cat_id' ";
-            
+            $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top' where cat_id ='$c_id' ";
+
 
             $run_cat = mysqli_query($con, $update_cat);
 

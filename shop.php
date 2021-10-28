@@ -391,17 +391,19 @@ include("includes/header.php");
 
 </div><!-- #content Finish -->
 
+
+
+
 <?php
 
     include("includes/footer.php");
 
     ?>
 
+
+
 </body>
 
 </html>
-
-
-
 
 <?php } ?>

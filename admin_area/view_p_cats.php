@@ -65,6 +65,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                                 <th> Product Id</th>
                                 <th> Product Category Title</th>
+                                <th> Product Category Image</th>
                                 <th> Product Category Top</th>
                                 <th> Edit Product Category </th>
                                 <th> Delete Product Category </th>
@@ -92,6 +93,8 @@ if (!isset($_SESSION['admin_email'])) {
 
                                     $p_cat_top = $row_p_cats['p_cat_top'];
 
+                                    $p_cat_image = $row_p_cats['p_cat_image'];
+
                                     $i++;
 
 
@@ -101,6 +104,8 @@ if (!isset($_SESSION['admin_email'])) {
                                 <!-- tr Begin -->
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $p_cat_title; ?></td>
+                                <td><img src="p_cat_image/<?php echo $p_cat_image; ?>" width="70px" height="70px"
+                                        alt=""></td>
                                 <td><?php echo $p_cat_top; ?></td>
                                 <td>
                                     <a href="index.php?delete_p_cat=<?php echo $p_cat_id; ?>">

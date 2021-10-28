@@ -51,7 +51,7 @@ if (!isset($_SESSION['admin_email'])) {
             <div class="panel-body">
                 <!-- panel-body begin -->
 
-                <form action="" method="post" class="form-horizontal">
+                <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                     <!-- form-horizontal begin -->
 
                     <div class="form-group">
@@ -79,15 +79,38 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Product Category Description
+                            Chosse As Top Product Category
 
                         </label><!-- control-label col-md-3 Finish-->
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <textarea type='text' name="p_cat_desc" id="" cols="30" rows="10"
-                                class="form-control"></textarea>
+                            <input type="radio" name="p_cat_top" value="yes">
+                            <label for="">Yes</label>
+
+                            <input type="radio" name="p_cat_top" value="no">
+                            <label for="">No</label>
+
+                        </div><!-- col-md-6 Finish-->
+
+                    </div><!-- form-group Finish -->
+
+
+                    <div class="form-group">
+                        <!-- form-group begin -->
+
+                        <label for="" class="control-label col-md-3">
+                            <!-- control-label col-md-3 Begin-->
+                            Product Category Image
+
+                        </label><!-- control-label col-md-3 Finish-->
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin-->
+
+                            <input type="file" name="p_cat_image" class="form-control">
+
 
                         </div><!-- col-md-6 Finish-->
 
@@ -98,8 +121,6 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-
-
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -128,15 +149,21 @@ if (!isset($_SESSION['admin_email'])) {
 
         $p_cat_title = $_POST['p_cat_title'];
 
-        $p_cat_desc = $_POST['p_cat_desc'];
+        $p_cat_top = $_POST['p_cat_top'];
 
-        $insert_p_cat = "insert into product_categories (p_cat_title,p_cat_desc) values ('$p_cat_title','$p_cat_desc')";
+        $p_cat_image = $_FILES['p_cat_image']['name'];
+
+        $tmp_name = $_FILES['p_cat_image']['tmp_name'];
+
+        move_uploaded_file($tmp_name, "p_cat_image/$p_cat_image");
+
+        $insert_p_cat = "insert into product_categories (p_cat_title,p_cat_top,p_cat_image) values ('$p_cat_title','$p_cat_top','$p_cat_image')";
 
         $run_p_cat = mysqli_query($con, $insert_p_cat);
 
         if ($run_p_cat) {
-            echo "<script>alert('Your New Porduct Category Has Been Inserted')</script>";
-            echo "<script>window.open('index.php?view_p_cats','_self')";
+            echo "<script> alert('Your New Product Category Has Been Inserted');</script>";
+            echo "<script> window.open('index.php?view_p_cats','_self')</script>";
         }
     }
 

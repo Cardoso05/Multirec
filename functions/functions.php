@@ -161,7 +161,7 @@ function getPCats()
 
         if (!empty($p_cat_image)) {
 
-            $p_cat_image = "<img src='admin_area/other_images/$p_cat_image' width='20px'>&nbsp;";
+            $p_cat_image = "<img src='admin_area/p_cat_image/$p_cat_image' width='20px'>&nbsp;";
         }
 
         echo "
@@ -199,7 +199,7 @@ function getPCats()
 
         if (!empty($p_cat_image)) {
 
-            $p_cat_image = "<img src='admin_area/other_images/$p_cat_image' width='20px'>&nbsp;";
+            $p_cat_image = "<img src='admin_area/p_cat_image/$p_cat_image' width='20px'>&nbsp;";
         }
 
         echo "
@@ -248,7 +248,7 @@ function getCats()
 
         if (!empty($cat_image)) {
 
-            $cat_image = "<img src='admin_area/other_images/$cat_image' width='20px'>&nbsp;";
+            $cat_image = "<img src='admin_area/cat_image/$cat_image' width='20px'>&nbsp;";
         }
 
         echo "
@@ -286,7 +286,7 @@ function getCats()
 
         if (!empty($cat_image)) {
 
-            $cat_image = "<img src='admin_area/other_images/$cat_image' width='20px'>&nbsp;";
+            $cat_image = "<img src='admin_area/cat_image/$cat_image' width='20px'>&nbsp;";
         }
 
         echo "
@@ -635,7 +635,7 @@ function getManufactures()
 
         if (!empty($manufacturer_image)) {
 
-            $manufacturer_image = "<img src='admin_area/other_images/$manufacturer_image' width='20px'>&nbsp;";
+            $manufacturer_image = "<img src='admin_area/manufacturer_images/$manufacturer_image' width='20px'>&nbsp;";
         }
 
         echo "
@@ -674,7 +674,7 @@ function getManufactures()
 
         if (!empty($manufacturer_image)) {
 
-            $manufacturer_image = "<img src='admin_area/other_images/$manufacturer_image' width='20px'>&nbsp;";
+            $manufacturer_image = "<img src='admin_area/manufacturer_images/$manufacturer_image' width='20px'>&nbsp;";
         }
 
         echo "

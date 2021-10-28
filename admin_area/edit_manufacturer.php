@@ -203,7 +203,6 @@ if (!isset($_SESSION['admin_email'])) {
             }
         } else {
             $update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_title',manufacturer_top='$manufacturer_top' where manufacturer_id ='$m_id' ";
-            echo $update_manufacturer;
 
             $run_manufacturer = mysqli_query($con, $update_manufacturer);
 

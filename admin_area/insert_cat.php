@@ -25,6 +25,7 @@ if (!isset($_SESSION['admin_email'])) {
     </div><!-- col-lg-12 finish-->
 
 </div><!-- row 1 finish-->
+
 <div class="row">
     <!-- row 2 begin -->
 
@@ -50,7 +51,7 @@ if (!isset($_SESSION['admin_email'])) {
             <div class="panel-body">
                 <!-- panel-body begin -->
 
-                <form action="" method="post" class="form-horizontal">
+                <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                     <!-- form-horizontal begin -->
 
                     <div class="form-group">
@@ -78,15 +79,38 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Category Description
+                            Chosse As Top Category
 
                         </label><!-- control-label col-md-3 Finish-->
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin-->
 
-                            <textarea type='text' name="cat_desc" id="" cols="30" rows="10"
-                                class="form-control"></textarea>
+                            <input type="radio" name="cat_top" value="yes">
+                            <label for="">Yes</label>
+
+                            <input type="radio" name="cat_top" value="no">
+                            <label for="">No</label>
+
+                        </div><!-- col-md-6 Finish-->
+
+                    </div><!-- form-group Finish -->
+
+
+                    <div class="form-group">
+                        <!-- form-group begin -->
+
+                        <label for="" class="control-label col-md-3">
+                            <!-- control-label col-md-3 Begin-->
+                            Category Image
+
+                        </label><!-- control-label col-md-3 Finish-->
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin-->
+
+                            <input type="file" name="cat_image" class="form-control">
+
 
                         </div><!-- col-md-6 Finish-->
 
@@ -97,8 +121,6 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-
-
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -126,14 +148,20 @@ if (!isset($_SESSION['admin_email'])) {
 
         $cat_title = $_POST['cat_title'];
 
-        $cat_desc = $_POST['cat_desc'];
+        $cat_top = $_POST['cat_top'];
 
-        $insert_cat = "insert into categories (cat_title,cat_desc) values ('$cat_title','$cat_desc')";
+        $cat_image = $_FILES['cat_image']['name'];
+
+        $tmp_name = $_FILES['cat_image']['tmp_name'];
+
+        move_uploaded_file($tmp_name, "cat_image/$cat_image");
+
+        $insert_cat = "insert into categories (cat_title, cat_top,cat_image) values ('$cat_title','$cat_top','$cat_image')";
 
         $run_cat = mysqli_query($con, $insert_cat);
 
         if ($run_cat) {
-            echo "<script> alert('Your New Porduct Category Has Been Inserted');</script>";
+            echo "<script> alert('Your New Category Has Been Inserted');</script>";
             echo "<script> window.open('index.php?view_cats','_self')</script>";
         }
     }
