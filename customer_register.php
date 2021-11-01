@@ -23,19 +23,8 @@ include("includes/header.php")
 
         </div><!-- col-md-12 Finish -->
 
-        <div class="col-md-3">
-            <!-- col-md-3 Begin -->
-
-            <?php
-
-            include("includes/sidebar.php");
-
-            ?>
-
-        </div><!-- col-md-3 Finish -->
-
-        <div class="col-md-9">
-            <!-- col-md-9 Begin -->
+        <div class="col-md-12">
+            <!-- col-md-12 Begin -->
 
             <div class="box">
                 <!-- box Begin -->
@@ -143,7 +132,7 @@ include("includes/header.php")
 
             </div><!-- box Finish -->
 
-        </div><!-- col-md-9 Finish -->
+        </div><!-- col-md-12 Finish -->
 
     </div><!-- container Finish -->
 </div><!-- #content Finish -->
@@ -180,45 +169,45 @@ if (isset($_POST['register'])) {
 
     $c_address = $_POST['c_address'];
 
-    if (is_uploaded_file($_FILES['c_image']['tmp_name'])){
+    if (is_uploaded_file($_FILES['c_image']['tmp_name'])) {
 
-    $c_image = $_FILES['c_image']['name'];
+        $c_image = $_FILES['c_image']['name'];
 
-    $c_image_tmp = $_FILES['c_image']['tmp_name'];
+        $c_image_tmp = $_FILES['c_image']['tmp_name'];
 
-    $c_ip = getRealIpUser();
+        $c_ip = getRealIpUser();
 
-    move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
+        move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
 
-    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
 
-    $run_customer = mysqli_query($con, $insert_customer);
+        $run_customer = mysqli_query($con, $insert_customer);
 
-    $sel_cart = "select * from cart where ip_add='$c_ip'";
+        $sel_cart = "select * from cart where ip_add='$c_ip'";
 
-    $run_cart = mysqli_query($con, $sel_cart);
+        $run_cart = mysqli_query($con, $sel_cart);
 
-    $check_cart = mysqli_num_rows($run_cart);
+        $check_cart = mysqli_num_rows($run_cart);
 
-    if ($check_cart > 0) {
+        if ($check_cart > 0) {
 
-        /// if register with item in cart
+            /// if register with item in cart
 
-        $_SESSION['customer_email'] = $c_email;
+            $_SESSION['customer_email'] = $c_email;
 
-        echo "<script>alert('You have been Registred Sucessfully')</script>";
+            echo "<script>alert('You have been Registred Sucessfully')</script>";
 
-        echo "<script>window.open('checkout.php','_self')</script>";
-    } else {
+            echo "<script>window.open('checkout.php','_self')</script>";
+        } else {
 
-        /// if register without item in cart
+            /// if register without item in cart
 
-        $_SESSION['customer_email'] = $c_email;
+            $_SESSION['customer_email'] = $c_email;
 
-        echo "<script>alert('You have been Registred Sucessfully')</script>";
+            echo "<script>alert('You have been Registred Sucessfully')</script>";
 
-        echo "<script>window.open('index.php','_self')</script>";
-    }
+            echo "<script>window.open('index.php','_self')</script>";
+        }
     }
 }
 

@@ -82,7 +82,50 @@ function getPro()
 
         $pro_price = $row_products['product_price'];
 
+        $pro_sale_price = $row_products['product_sale'];
+
         $pro_img1 = $row_products['product_img1'];
+
+        $pro_label = $row_products['product_label'];
+
+        $manufacturer_id = $row_products['manufacturer_id'];
+
+        $get_manufacturer = "select * from manufacturers where manufacturer_id = '$manufacturer_id'";
+
+        $run_manufacturer = mysqli_query($db, $get_manufacturer);
+
+        $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+
+        $manufacturer_title = $row_manufacturer['manufacturer_title'];
+
+        if ($pro_label == "new") {
+
+            $product_price = "<del> $$pro_price </del>";
+
+            $product_sale_price = " $pro_sale_price ";
+        } else {
+
+            $product_price = " $$pro_price ";
+
+            $product_sale_price = " ";
+        }
+
+        if ($pro_label == "") {
+        } else {
+
+            $product_label = "
+            
+                <a href='#' class='label $pro_label'>
+                
+                    <div class='theLabel'> $pro_label </div>
+                    <div class='labelBackground'>  </div>
+
+
+                </a>
+            
+            
+            ";
+        }
 
         echo "
         
@@ -98,6 +141,12 @@ function getPro()
                 
                 <div class='text'>
                 
+                <center>
+
+                    <p class='btn btn-primary'> $manufacturer_title </p>
+
+                </center>
+
                     <h3>
             
                         <a href='details.php?pro_id=$pro_id'>
@@ -110,7 +159,7 @@ function getPro()
                     
                     <p class='price'>
                     
-                        $ $pro_price
+                        $product_price $ $product_sale_price
                     
                     </p>
                     
@@ -131,6 +180,8 @@ function getPro()
                     </p>
                 
                 </div>
+
+                $product_label
             
             </div>
         
