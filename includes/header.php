@@ -4,8 +4,8 @@ session_start();
 
 include("includes/db.php");
 include("functions/functions.php");
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +18,11 @@ include("functions/functions.php");
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="customer/js/checklogin.js"></script>
-    <script src="js/checkRegister.js"></script>
-    <script src="js/searchTabs.js"></script>
-
+    <?php
+    if ($active = "Shop") {
+        echo "<script src='js/shop.js'></script>";
+    }
+    ?>
 </head>
 
 <body>
@@ -36,19 +37,19 @@ include("functions/functions.php");
                 <!-- col-md-6 offer Begin -->
 
                 <a href="#" class="btn btn-success btn-sm">
+
                     <?php
 
                     if (!isset($_SESSION['customer_email'])) {
 
                         echo "Welcome: Guest";
                     } else {
-                        echo "Welcome:" . $_SESSION['customer_email'] . "";
+
+                        echo "Welcome: " . $_SESSION['customer_email'] . "";
                     }
 
-
-
-
                     ?>
+
                 </a>
                 <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
 
@@ -70,17 +71,21 @@ include("functions/functions.php");
                         <a href="cart.php">Go To Cart</a>
                     </li>
                     <li>
+                        <a href="checkout.php">
 
-                        <?php
+                            <?php
 
-                        if (!isset($_SESSION['customer_email'])) {
+                            if (!isset($_SESSION['customer_email'])) {
 
-                            echo "<a href='checkout.php'> Login </a>";
-                        } else {
-                            echo "<a href='logout.php'> Log Out </a>";
-                        }
-                        ?>
+                                echo "<a href='checkout.php'> Login </a>";
+                            } else {
 
+                                echo " <a href='logout.php'> Log Out </a> ";
+                            }
+
+                            ?>
+
+                        </a>
                     </li>
 
                 </ul><!-- menu Finish -->
@@ -135,38 +140,31 @@ include("functions/functions.php");
                     <ul class="nav navbar-nav left">
                         <!-- nav navbar-nav left Begin -->
 
-                        <li class="<?php if ($active == 'Home') {
-                                        echo "active";
-                                    } ?>">
+                        <li class="<?php if ($active == 'Home') echo "active"; ?>">
                             <a href="index.php">Home</a>
                         </li>
-                        <li class="<?php if ($active == 'Shop') {
-                                        echo "active";
-                                    } ?>">
+                        <li class="<?php if ($active == 'Shop') echo "active"; ?>">
                             <a href="shop.php">Shop</a>
                         </li>
-                        <li class="<?php if ($active == 'Account') {
-                                        echo "active";
-                                    } ?>">
+                        <li class="<?php if ($active == 'Account') echo "active"; ?>">
 
                             <?php
+
                             if (!isset($_SESSION['customer_email'])) {
 
-                                echo "<a href='checkout.php'> My Account </a>";
+                                echo "<a href='checkout.php'>My Account</a>";
                             } else {
 
-                                echo "<a href='checkout.php?my_orders'> My Account </a>";
+                                echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
                             }
+
                             ?>
+
                         </li>
-                        <li class="<?php if ($active == 'Cart') {
-                                        echo "active";
-                                    } ?>">
+                        <li class="<?php if ($active == 'Cart') echo "active"; ?>">
                             <a href="cart.php">Shopping Cart</a>
                         </li>
-                        <li class="<?php if ($active == 'Contact') {
-                                        echo "active";
-                                    } ?>">
+                        <li class="<?php if ($active == 'Contact') echo "active"; ?>">
                             <a href="contact.php">Contact Us</a>
                         </li>
 
