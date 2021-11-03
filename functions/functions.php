@@ -98,19 +98,19 @@ function getPro()
 
         $manufacturer_title = $row_manufacturer['manufacturer_title'];
 
-        if ($pro_label == "new") {
+        if ($pro_label == "sale") {
 
-            $product_price = "<del> $$pro_price </del>";
+            $product_price = "<del> $$pro_price</del>";
 
-            $product_sale_price = " $pro_sale_price ";
+            $product_sale_price = "| $ $pro_sale_price ";
         } else {
 
-            $product_price = " $$pro_price ";
+            $product_price = "$$pro_price ";
 
             $product_sale_price = " ";
         }
 
-        if ($pro_label == "") {
+        if ($pro_label == "null") {
         } else {
 
             $product_label = "
@@ -159,7 +159,7 @@ function getPro()
                     
                     <p class='price'>
                     
-                        $product_price $ $product_sale_price
+                        $product_price  $product_sale_price
                     
                     </p>
                     
