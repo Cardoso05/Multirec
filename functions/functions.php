@@ -110,7 +110,7 @@ function getPro()
             $product_sale_price = " ";
         }
 
-        if ($pro_label == "null") {
+        if ($pro_label == "") {
         } else {
 
             $product_label = "
