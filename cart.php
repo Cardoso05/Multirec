@@ -4,6 +4,8 @@ include("includes/header.php")
 
 ?>
 
+
+
 <div id="content">
     <!-- #content Begin -->
     <div class="container">
@@ -86,6 +88,8 @@ include("includes/header.php")
 
                                     $pro_qty = $row_cart['qty'];
 
+                                    $pro_sale = $row_cart['p_price'];
+
                                     $get_products = "select * from products where product_id = '$pro_id'";
 
                                     $run_products = mysqli_query($con, $get_products);
@@ -98,7 +102,9 @@ include("includes/header.php")
 
                                         $only_price = $row_products['product_price'];
 
-                                        $sub_total = $row_products['product_price'] * $pro_qty;
+                                        $sub_total = $pro_sale * $pro_qty;
+
+                                        $_SESSION['pro_qty'] = $pro_qty;
 
                                         $total += $sub_total;
 
@@ -127,13 +133,14 @@ include("includes/header.php")
 
                                     <td>
 
-                                        <?php echo $pro_qty; ?>
+                                        <input type="text" name="quantity" data-product_id="<?php echo $pro_id; ?>"
+                                            value="<?php echo $_SESSION['pro_qty']; ?>" class="quantity form-control">
 
                                     </td>
 
                                     <td>
 
-                                        <?php echo $only_price; ?>
+                                        <?php echo $pro_sale; ?>
 
                                     </td>
 
@@ -255,11 +262,8 @@ include("includes/header.php")
                     <!-- col-md-3 col-sm-6 Begin -->
                     <div class="box same-height headline">
                         <!-- box same-height headline Begin -->
-
                         <h3 class="text-center">Products You Maybe Like</h3>
-
                     </div><!-- box same-height headline Finish -->
-
                 </div><!-- col-md-3 col-sm-6 Finish -->
 
                 <?php
@@ -276,33 +280,115 @@ include("includes/header.php")
 
                     $pro_price = $row_products['product_price'];
 
+                    $pro_sale_price = $row_products['product_sale'];
+
                     $pro_img1 = $row_products['product_img1'];
+
+                    $pro_label = $row_products['product_label'];
+
+                    $manufacturer_id = $row_products['manufacturer_id'];
+
+                    $get_manufacturer = "select * from manufacturers where manufacturer_id = '$manufacturer_id'";
+
+                    $run_manufacturer = mysqli_query($db, $get_manufacturer);
+
+                    $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+
+                    $manufacturer_title = $row_manufacturer['manufacturer_title'];
+
+                    if ($pro_label == "sale") {
+
+                        $product_price = "<del> $$pro_price</del>";
+
+                        $product_sale_price = "| $ $pro_sale_price ";
+                    } else {
+
+                        $product_price = "$$pro_price ";
+
+                        $product_sale_price = " ";
+                    }
+
+                    if ($pro_label == "") {
+                    } else {
+
+                        $product_label = "
+                            
+                                <a href='#' class='label $pro_label'>
+                                
+                                    <div class='theLabel'> $pro_label </div>
+                                    <div class='labelBackground'>  </div>
+                
+                
+                                </a>
+                            
+                            
+                            ";
+                    }
 
                     echo "
                         
                         <div class='col-md-3 col-sm-6 center-responsive'>
-                            <!-- col-md-3 col-sm-6 center-responsive Begin -->
-                            <div class='product same-height'>
-                                <!-- product same-height Begin -->
-                                <a href='details.php?pro_id'>
-                                    <img class='img-responsive' src='admin_area/product_images/$pro_img1' alt='Product 6'>
+                        
+                            <div class='product'>
+                            
+                                <a href='details.php?pro_id=$pro_id'>
+                                
+                                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                                
                                 </a>
-
+                                
                                 <div class='text'>
-                                    <!-- text Begin -->
-                                    <h3><a href='details.php'>$pro_title</a></h3>
-
-                                    <p class='price'>$ $pro_price</p>
-
-                                </div><!-- text Finish -->
-
-                            </div><!-- product same-height Finish -->
-                        </div><!-- col-md-3 col-sm-6 center-responsive Finish -->
+                                
+                                <center>
+                
+                                    <p class='btn btn-primary'> $manufacturer_title </p>
+                
+                                </center>
+                
+                                    <h3>
+                            
+                                        <a href='details.php?pro_id=$pro_id'>
+                
+                                            $pro_title
+                
+                                        </a>
+                                    
+                                    </h3>
+                                    
+                                    <p class='price'>
+                                    
+                                        $product_price  $product_sale_price
+                                    
+                                    </p>
+                                    
+                                    <p class='button'>
+                                    
+                                        <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                
+                                            View Details
+                
+                                        </a>
+                                    
+                                        <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                
+                                            <i class='fa fa-shopping-cart'></i> Add to Cart
+                
+                                        </a>
+                                    
+                                    </p>
+                                
+                                </div>
+                
+                                $product_label
+                            
+                            </div>
+                        
+                        </div>
+                        
                         ";
                 }
 
                 ?>
-
 
             </div><!-- #row same-heigh-row Finish -->
 
@@ -381,12 +467,39 @@ include("includes/header.php")
 
     </div><!-- container Finish -->
 </div><!-- #content Finish -->
+<?php include('includes/footer.php'); ?>
+<script>
+$(document).ready(function(data) {
 
-<?php
+    $(document).on('keyup', '.quantity', function() {
 
-include("includes/footer.php");
+        var id = $(this).data("product_id");
+        var quantity = $(this).val();
 
-?>
+        if (quantity != '') {
+
+            $.ajax({
+
+                url: "change.php",
+                method: "POST",
+                data: {
+                    id: id,
+                    quantity: quantity,
+                },
+
+
+                success: function() {
+                    $("body").load("cart_body.php");
+                }
+
+            });
+
+        }
+
+    });
+
+});
+</script>
 
 
 

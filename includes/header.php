@@ -18,11 +18,8 @@ include("functions/functions.php");
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <?php
-    if ($active = "Shop") {
-        echo "<script src='js/shop.js'></script>";
-    }
-    ?>
+    <script src='js/shop.js'></script>
+
 </head>
 
 <body>

@@ -41,6 +41,39 @@ if (isset($_GET['pro_id'])) {
     $row_p_cat = mysqli_fetch_array($run_p_cat);
 
     $p_cat_title = $row_p_cat['p_cat_title'];
+
+    $pro_label = $row_product['product_label'];
+
+    $pro_sale_price = $row_product['product_sale'];
+
+    if ($pro_label == "sale") {
+
+        $product_price = "<del> $$pro_price</del>";
+
+        $product_sale_price = " | $ $pro_sale_price ";
+    } else {
+
+        $product_price = "$$pro_price ";
+
+        $product_sale_price = " ";
+    }
+
+    if ($pro_label == "") {
+    } else {
+
+        $product_label = "
+        
+            <a href='#' class='label $pro_label'>
+            
+                <div class='theLabel'> $pro_label </div>
+                <div class='labelBackground'>  </div>
+
+
+            </a>
+        
+        
+        ";
+    }
 }
 ?>
 
@@ -294,19 +327,8 @@ if (isset($_GET['pro_id'])) {
 
             </div><!-- col-md-12 Finish -->
 
-            <div class="col-md-3">
-                <!-- col-md-3 Begin -->
-
-                <?php
-
-                include("includes/sidebar.php");
-
-                ?>
-
-            </div><!-- col-md-3 Finish -->
-
-            <div class="col-md-9">
-                <!-- col-md-9 Begin -->
+            <div class="col-md-12">
+                <!-- col-md-12 Begin -->
                 <div id="productMain" class="row">
                     <!-- row Begin -->
                     <div class="col-sm-6">
@@ -352,11 +374,15 @@ if (isset($_GET['pro_id'])) {
                                 <a href="#myCarousel" class="right carousel-control" data-slide="next">
                                     <!-- right carousel-control Begin -->
                                     <span class="glyphicon glyphicon-chevron-right"></span>
-                                    <span class="sr-only">Previous</span>
+                                    <span class="sr-only">Next</span>
                                 </a><!-- right carousel-control Finish -->
 
                             </div><!-- carousel slide Finish -->
                         </div><!-- mainImage Finish -->
+
+                        <?php echo $product_label ?>
+
+
                     </div><!-- col-sm-6 Finish -->
 
                     <div class="col-sm-6">
@@ -412,7 +438,8 @@ if (isset($_GET['pro_id'])) {
                                     </div><!-- col-md-7 Finish -->
                                 </div><!-- form-group Finish -->
 
-                                <p class="price">$ <?php echo $pro_price; ?></p>
+                                <p class="price"><?php echo $product_price;
+                                                    echo  $product_sale_price; ?></p>
 
                                 <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart">
                                         Add to
@@ -504,15 +531,58 @@ if (isset($_GET['pro_id'])) {
 
                         $pro_title = $row_products['product_title'];
 
-                        $pro_img1 = $row_products['product_img1'];
-
                         $pro_price = $row_products['product_price'];
 
+                        $pro_sale_price = $row_products['product_sale'];
+
+                        $pro_img1 = $row_products['product_img1'];
+
+                        $pro_label = $row_products['product_label'];
+
+                        $manufacturer_id = $row_products['manufacturer_id'];
+
+                        $get_manufacturer = "select * from manufacturers where manufacturer_id = '$manufacturer_id'";
+
+                        $run_manufacturer = mysqli_query($db, $get_manufacturer);
+
+                        $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+
+                        $manufacturer_title = $row_manufacturer['manufacturer_title'];
+
+                        if ($pro_label == "sale") {
+
+                            $product_price = "<del> $$pro_price</del>";
+
+                            $product_sale_price = "| $ $pro_sale_price ";
+                        } else {
+
+                            $product_price = "$$pro_price ";
+
+                            $product_sale_price = " ";
+                        }
+
+                        if ($pro_label == "") {
+                        } else {
+
+                            $product_label = "
+                            
+                                <a href='#' class='label $pro_label'>
+                                
+                                    <div class='theLabel'> $pro_label </div>
+                                    <div class='labelBackground'>  </div>
+                
+                
+                                </a>
+                            
+                            
+                            ";
+                        }
+
                         echo "
-                       
+                        
                         <div class='col-md-3 col-sm-6 center-responsive'>
                         
-                            <div class='product same-height'>
+                            <div class='product'>
                             
                                 <a href='details.php?pro_id=$pro_id'>
                                 
@@ -522,24 +592,60 @@ if (isset($_GET['pro_id'])) {
                                 
                                 <div class='text'>
                                 
-                                    <h3> <a href='details.php?pro_id=$pro_id'> $pro_title </a> </h3>
+                                <center>
+                
+                                    <p class='btn btn-primary'> $manufacturer_title </p>
+                
+                                </center>
+                
+                                    <h3>
+                            
+                                        <a href='details.php?pro_id=$pro_id'>
+                
+                                            $pro_title
+                
+                                        </a>
                                     
-                                    <p class='price'> $ $pro_price </p>
+                                    </h3>
+                                    
+                                    <p class='price'>
+                                    
+                                        $product_price  $product_sale_price
+                                    
+                                    </p>
+                                    
+                                    <p class='button'>
+                                    
+                                        <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                
+                                            View Details
+                
+                                        </a>
+                                    
+                                        <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                
+                                            <i class='fa fa-shopping-cart'></i> Add to Cart
+                
+                                        </a>
+                                    
+                                    </p>
                                 
                                 </div>
+                
+                                $product_label
                             
                             </div>
                         
                         </div>
-                       
-                       ";
+                        
+                        ";
                     }
 
                     ?>
 
                 </div><!-- #row same-heigh-row Finish -->
 
-            </div><!-- col-md-9 Finish -->
+            </div><!-- col-md-12 Finish -->
 
         </div><!-- container Finish -->
     </div><!-- #content Finish -->

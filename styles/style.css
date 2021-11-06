@@ -494,7 +494,7 @@ body{
     padding: 6px 50px 6px 15px;
     margin: 10px 50px 10px -71px;
     color: #fff;
-
+    text-shadow: 3px 3px 3px gray;
 }
 
 .label.sale .theLabel{

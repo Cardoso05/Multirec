@@ -260,6 +260,20 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
+                        <label class="col-md-3 control-label">Sale Price</label>
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin -->
+
+                            <input type="text" name="product_sale" class="form-control">
+
+                        </div><!-- col-md-6 Finish -->
+
+                    </div><!-- form-group Finish -->
+
+                    <div class="form-group">
+                        <!-- form-group Begin -->
+
                         <label class="col-md-3 control-label">Product Keywords</label>
 
                         <div class="col-md-6">
@@ -284,6 +298,21 @@ if (!isset($_SESSION['admin_email'])) {
                         </div><!-- col-md-6 Finish -->
 
                     </div><!-- form-group Finish -->
+
+                    <div class="form-group">
+                        <!-- form-group Begin -->
+
+                        <label class="col-md-3 control-label">Product Label</label>
+
+                        <div class="col-md-6">
+                            <!-- col-md-6 Begin -->
+
+                            <input type="text" name="product_label" class="form-control">
+
+                        </div><!-- col-md-6 Finish -->
+
+                    </div><!-- form-group Finish -->
+
 
                     <div class="form-group">
                         <!-- form-group Begin -->
@@ -330,6 +359,8 @@ if (!isset($_SESSION['admin_email'])) {
         $product_price = $_POST['product_price'];
         $product_keywords = $_POST['product_keywords'];
         $product_desc = $_POST['product_desc'];
+        $product_sale = $_POST['product_sale'];
+        $product_label = $_POST['product_label'];
 
         $product_img1 = $_FILES['product_img1']['name'];
         $product_img2 = $_FILES['product_img2']['name'];
@@ -343,7 +374,7 @@ if (!isset($_SESSION['admin_email'])) {
         move_uploaded_file($temp_name2, "product_images/$product_img2");
         move_uploaded_file($temp_name3, "product_images/$product_img3");
 
-        $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_img1','$product_img2','$product_img3',$product_price,'$product_keywords','$product_desc')";
+        $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_desc,product_keywords,product_label,product_sale) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc','$product_keywords','$product_label','$product_sale')";
 
         $run_product = mysqli_query($con, $insert_product);
 
