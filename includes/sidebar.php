@@ -119,7 +119,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
                     }
 
                     echo "
-                    <li style='background:#dddddd' class='checkbox checkbox-primary'>
+                    <li class='checkbox checkbox-primary active-checkbox'>
 
                         <a>
 
@@ -133,7 +133,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 
                     echo " value='$manufacturer_id' type='checkbox' class='get_manufacturer' name='manufacturer'>
 
-                                <span>
+                                <span style:'color: white' >
                                 $manufacturer_image
                                 $manufacturer_title
                                 </span>
@@ -266,7 +266,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
                     }
 
                     echo "
-                    <li style='background:#dddddd' class='checkbox checkbox-primary'>
+                    <li class='checkbox active-checkbox checkbox-primary'>
 
                         <a>
 
@@ -413,7 +413,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
                     }
 
                     echo "
-                    <li style='background:#dddddd' class='checkbox checkbox-primary'>
+                    <li class='checkbox checkbox-primary active-checkbox'>
 
                         <a>
 

@@ -1,8 +1,9 @@
 <?php
-
+$active = 'Shop';
 include("includes/header.php");
 
 ?>
+
 
 <?php if (!isset($_GET['user_query'])) {
 
@@ -13,16 +14,19 @@ include("includes/header.php");
     <!-- #content Begin -->
     <div class="container">
         <!-- container Begin -->
+
         <div class="col-md-12">
             <!-- col-md-12 Begin -->
+
+            <img class="img-responsive" src="images/shop-banner.jpg" alt="">
 
             <ul class="breadcrumb">
                 <!-- breadcrumb Begin -->
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="index.php" class="link-breadcrumb">Home</a>
                 </li>
                 <li>
-                    Shop
+                    <a href="#" class="link-breadcrumb">Shop</a>
                 </li>
             </ul><!-- breadcrumb Finish -->
 
@@ -42,15 +46,6 @@ include("includes/header.php");
         <div class="col-md-9">
             <!-- col-md-9 Begin -->
 
-            <div class='box'>
-                <!-- box Begin -->
-                <h1>Shop</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo deleniti accusamus, consequuntur
-                    illum quasi ut. Voluptate a, ipsam repellendus ut fugiat minima? Id facilis itaque autem, officiis
-                    veritatis perferendis, quaerat!
-                </p>
-            </div><!-- box Finish -->
 
             <div id="products" class="row">
                 <!-- row Begin -->
@@ -115,16 +110,6 @@ include("includes/header.php");
 
         <div class="col-md-9">
             <!-- col-md-9 Begin -->
-
-            <div class='box'>
-                <!-- box Begin -->
-                <h1>Shop</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo deleniti accusamus, consequuntur
-                    illum quasi ut. Voluptate a, ipsam repellendus ut fugiat minima? Id facilis itaque autem, officiis
-                    veritatis perferendis, quaerat!
-                </p>
-            </div><!-- box Finish -->
 
             <div id="products">
                 <!-- row Begin -->

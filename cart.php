@@ -10,20 +10,7 @@ include("includes/header.php")
     <!-- #content Begin -->
     <div class="container">
         <!-- container Begin -->
-        <div class="col-md-12">
-            <!-- col-md-12 Begin -->
 
-            <ul class="breadcrumb">
-                <!-- breadcrumb Begin -->
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    Cart
-                </li>
-            </ul><!-- breadcrumb Finish -->
-
-        </div><!-- col-md-12 Finish -->
 
         <div id="cart" class="col-md-9">
             <!-- col-md-9 Begin -->
@@ -34,7 +21,7 @@ include("includes/header.php")
                 <form action="cart.php" method="post" enctype="multipart/form-data">
                     <!-- form Begin -->
 
-                    <h1>Shopping Cart</h1>
+                    <h1>Carrinho</h1>
 
                     <?php
 
@@ -48,7 +35,7 @@ include("includes/header.php")
 
                     ?>
 
-                    <p class="text-muted">You currently have <?php echo $count; ?> item(s) in your cart</p>
+                    <p class="text-muted">Você tem <?php echo $count; ?> iten(s) no seu carrinho</p>
 
                     <div class="table-responsive">
                         <!-- table-responsive Begin -->
@@ -62,10 +49,10 @@ include("includes/header.php")
                                 <tr>
                                     <!-- tr Begin -->
 
-                                    <th colspan="2">Product</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Size</th>
+                                    <th colspan="2">Produto</th>
+                                    <th>Qtd</th>
+                                    <th>Preço Unico</th>
+                                    <th>Tamanho</th>
                                     <th colspan="1">Delete</th>
                                     <th colspan="2">Sub-Total</th>
 
@@ -197,7 +184,7 @@ include("includes/header.php")
                             <a href="index.php" class="btn btn-default">
                                 <!-- btn btn-default Begin -->
 
-                                <i class="fa fa-chevron-left"></i> Continue Shopping
+                                <i class="fa fa-chevron-left"></i> Continue Comprando
 
                             </a><!-- btn btn-default Finish -->
 
@@ -209,15 +196,21 @@ include("includes/header.php")
                             <button type="submit" name="update" value="Update Cart" class="btn btn-default">
                                 <!-- btn btn-default Begin -->
 
-                                <i class="fa fa-refresh"></i> Update Cart
+                                <i class="fa fa-refresh"></i> Atualize o Carrinho
 
                             </button><!-- btn btn-default Finish -->
 
+                            <?php if ($count > 0) {
+
+                            ?>
+
                             <a href="checkout.php" class="btn btn-primary">
 
-                                Proceed Checkout <i class="fa fa-chevron-right"></i>
+                                Confirme o Pagamento <i class="fa fa-chevron-right"></i>
 
                             </a>
+
+                            <?php } ?>
 
                         </div><!-- pull-right Finish -->
 
@@ -262,7 +255,7 @@ include("includes/header.php")
                     <!-- col-md-3 col-sm-6 Begin -->
                     <div class="box same-height headline">
                         <!-- box same-height headline Begin -->
-                        <h3 class="text-center">Products You Maybe Like</h3>
+                        <h3 class="text-center">Talvez você gostaria </h3>
                     </div><!-- box same-height headline Finish -->
                 </div><!-- col-md-3 col-sm-6 Finish -->
 
@@ -403,14 +396,14 @@ include("includes/header.php")
                 <div class="box-header">
                     <!-- box-header Begin -->
 
-                    <h3>Order Summary</h3>
+                    <h3>Sumario de Compra</h3>
 
                 </div><!-- box-header Finish -->
 
                 <p class="text-muted">
                     <!-- text-muted Begin -->
 
-                    Shipping and additional costs are calculated based on value you have entered
+                    Adicionais no valor da compra dos produtos
 
                 </p><!-- text-muted Finish -->
 
@@ -426,7 +419,7 @@ include("includes/header.php")
                             <tr>
                                 <!-- tr Begin -->
 
-                                <td> Order All Sub-Total </td>
+                                <td> Sub-Total </td>
                                 <th> <?php echo $total; ?></th>
 
                             </tr><!-- tr Finish -->
@@ -434,7 +427,7 @@ include("includes/header.php")
                             <tr>
                                 <!-- tr Begin -->
 
-                                <td> Shipping and Handling </td>
+                                <td> Frete </td>
                                 <td> $0 </td>
 
                             </tr><!-- tr Finish -->
@@ -442,7 +435,7 @@ include("includes/header.php")
                             <tr>
                                 <!-- tr Begin -->
 
-                                <td> Tax </td>
+                                <td> Taxas adicionais </td>
                                 <th> $0 </th>
 
                             </tr><!-- tr Finish -->

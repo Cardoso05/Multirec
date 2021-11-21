@@ -7,6 +7,10 @@
             <div class="col-sm-6 col-md-3">
                 <!-- col-sm-6 col-md-3 Begin -->
 
+                <img src="images/logo.png" alt="">
+
+                <hr>
+
                 <h4>Pages</h4>
 
                 <ul>
@@ -17,37 +21,11 @@
                     <li><a href="customer/my_account.php">My Account</a></li>
                 </ul><!-- ul Finish -->
 
-                <hr>
-
-                <h4>User Section</h4>
-
-                <ul>
-                    <!-- ul Begin -->
-                    <li>
-                        <a href="checkout.php">
-                            <?php
-                            if (!isset($_SESSION['customer_email'])) {
-
-                                echo "<a href='checkout.php'> Login </a>";
-                            } else {
-
-                                echo "<a href='checkout.php?my_orders'> My Account </a>";
-                            }
-                            ?>
-                        </a>
-
-                    </li>
-
-                    <li><a href="customer_register.php">Register</a></li>
-
-                    <li><a href="terms.php">Terms & Conditions</a></li>
-                </ul><!-- ul Finish -->
-
                 <hr class="hidden-md hidden-lg hidden-sm">
 
             </div><!-- col-sm-6 col-md-3 Finish -->
 
-            <div class="com-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <!-- col-sm-6 col-md-3 Begin -->
 
                 <h4>Top Products Categories</h4>
@@ -94,21 +72,15 @@
             <div class="col-sm-6 col-md-3">
                 <!-- col-sm-6 col-md-3 Begin -->
 
-                <h4>Find Us</h4>
+                <h4>Fale Conosco </h4>
 
-                <p>
-                    <!-- p Start -->
 
-                    <strong>M-Dev Media inc.</strong>
-                    <br />Cibubur
-                    <br />Ciracas
-                    <br />0818-0683-3157
-                    <br />mugianto4th@gmail.com
-                    <br /><strong>MrGhie</strong>
+                <ul>
+                    <li><a href="#">+55 11 9999-9999</a></li>
+                    <li><a href="#">contato.multirec@multirec.com.br</a></li>
+                </ul>
 
-                </p><!-- p Finish -->
-
-                <a href="contact.php">Check Our Contact Page</a>
+                <a href="contact.php">Nossa Página De Contato</a>
 
                 <hr class="hidden-md hidden-lg">
 
@@ -116,10 +88,10 @@
 
             <div class="col-sm-6 col-md-3">
 
-                <h4>Get The News</h4>
+                <h4>Notícias</h4>
 
                 <p class="text-muted">
-                    Dont miss our latest update products.
+                    Fique por dentro das nossas novidades
                 </p>
 
                 <form action="" method="post">
@@ -141,7 +113,7 @@
 
                 <hr>
 
-                <h4>Keep In Touch</h4>
+                <h4>Redes Sociais</h4>
 
                 <p class="social">
                     <a href="#" class="fa fa-facebook"></a>
@@ -164,15 +136,10 @@
         <div class="col-md-6">
             <!-- col-md-6 Begin -->
 
-            <p class="pull-left">&copy; 2018 M-Dev Store All Rights Reserve</p>
+            <p class="pull-left">&copy; 2022 Multirec All Rights Reserve</p>
 
         </div><!-- col-md-6 Finish -->
-        <div class="col-md-6">
-            <!-- col-md-6 Begin -->
 
-            <p class="pull-right">Theme by: <a href="#">MrGhie</a></p>
-
-        </div><!-- col-md-6 Finish -->
     </div><!-- container Finish -->
 </div><!-- #copyright Finish -->
 

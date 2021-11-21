@@ -11,15 +11,6 @@ include("includes/header.php")
         <div class="col-md-12">
             <!-- col-md-12 Begin -->
 
-            <ul class="breadcrumb">
-                <!-- breadcrumb Begin -->
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    Register
-                </li>
-            </ul><!-- breadcrumb Finish -->
 
         </div><!-- col-md-12 Finish -->
 

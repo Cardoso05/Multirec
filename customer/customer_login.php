@@ -1,70 +1,58 @@
-<div class="box">
+<div class="box box-login">
     <!-- box Begin -->
 
-    <div class="box-header">
-        <!-- box-header Begin -->
+    <div class="row container">
 
-        <center>
-            <!-- center Begin -->
+        <form name="formLogin" action="checkout.php" method="post" onsubmit=" return validaLogin(this)"
+            class="col-md-6 form-login">
+            <!-- form Begin -->
 
-            <h1>Login</h1>
+            <h1 class="title-login">Entre na sua conta!</h1>
 
-            <p class="lead">Already have our account..? </p>
+            <div class="form-group">
+                <!-- form-group Begin -->
 
-            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, nihil a. Culpa a
-                quos ad eligendi porro autem quibusdam, vitae qui quo dolore aut recusandae neque quas temporibus
-                dolorum earum.
-            </p>
-
-        </center><!-- center Finish -->
+                <input type="text" id="c_email" name="c_email" type="text" class="form-control login-input"
+                    placeholder="Email" required>
 
 
-    </div><!-- box-header Finish -->
+            </div><!-- form-group Finish -->
 
-    <form name="formLogin" action="checkout.php" method="post" onsubmit=" return validaLogin(this)">
-        <!-- form Begin -->
+            <div class="form-group">
+                <!-- form-group Begin -->
 
-        <div class="form-group">
-            <!-- form-group Begin -->
-
-            <label> Email </label>
-
-            <input type="text" id="c_email" name="c_email" type="text" class="form-control" required>
+                <input type="text" id="c_pass" name="c_pass" type="password" class="form-control login-input"
+                    placeholder="Password" required>
 
 
-        </div><!-- form-group Finish -->
+            </div><!-- form-group Finish -->
 
-        <div class="form-group">
-            <!-- form-group Begin -->
+            <button name="login" value="login" class="btn btn-primary btn-login">
 
-            <label> Password </label>
-
-            <input type="text" id="c_pass" name="c_pass" type="password" class="form-control" required>
-
-
-        </div><!-- form-group Finish -->
-
-        <div class="text-center">
-            <!-- text-cente Begin-->
-
-            <button name="login" value="login" class="btn btn-primary">
-
-                <i class="fa fa-sing-in"></i>Login
+                <i class="fa fa-sing-in"></i>ENTRAR
 
             </button>
 
 
-        </div><!-- text-cente Finish-->
+
+        </form><!-- form Finish -->
+        <div class="col-md-6 hidden-sm">
 
 
-    </form><!-- form Finish -->
+            <img src="images/ilustration-login.png" alt="" class="img-responsive">
+
+        </div>
+
+
+
+    </div>
 
     <center>
         <!-- center Begin -->
 
         <a href="customer_register.php">
 
-            <h3> Dont have account.. ? Register here </h3>
+            <h3 class="register"> Registre-se Aqui !</h3>
 
         </a>
 
