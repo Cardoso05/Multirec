@@ -622,3 +622,19 @@ body{
 .box{
     border-width: 0px !important;
 }
+.navbar-default{
+    border-width: 0;
+}
+.navbar-toggle{
+    background-color: white;
+}
+.title-product{
+    color: white;
+}
+
+.text-button{
+    font-family: Ageo;
+}
+.price-2{
+    color: white;
+}

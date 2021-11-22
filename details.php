@@ -94,70 +94,6 @@ if (isset($_GET['pro_id'])) {
 
 <body>
 
-    <div id="top">
-        <!-- Top Begin -->
-
-        <div class="container">
-            <!-- container Begin -->
-
-            <div class="col-md-6 offer">
-                <!-- col-md-6 offer Begin -->
-
-                <a href="#" class="btn btn-success btn-sm">
-                    <?php
-
-                    if (!isset($_SESSION['customer_email'])) {
-
-                        echo "Welcome: Guest";
-                    } else {
-                        echo "Welcome:" . $_SESSION['customer_email'] . "";
-                    }
-
-
-
-
-                    ?>
-                </a>
-                <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
-
-            </div><!-- col-md-6 offer Finish -->
-
-            <div class="col-md-6">
-                <!-- col-md-6 Begin -->
-
-                <ul class="menu">
-                    <!-- cmenu Begin -->
-
-                    <li>
-                        <a href="customer_register.php">Register</a>
-                    </li>
-                    <li>
-                        <a href="checkout.php">My Account</a>
-                    </li>
-                    <li>
-                        <a href="cart.php">Go To Cart</a>
-                    </li>
-                    <li>
-
-                        <?php
-
-                        if (!isset($_SESSION['customer_email'])) {
-
-                            echo "<a href='checkout.php'> Login </a>";
-                        } else {
-                            echo "<a href='logout.php'> Log Out </a>";
-                        }
-                        ?>
-
-                    </li>
-
-                </ul><!-- menu Finish -->
-
-            </div><!-- col-md-6 Finish -->
-
-        </div><!-- container Finish -->
-
-    </div><!-- Top Finish -->
 
     <div id="navbar" class="navbar navbar-default">
         <!-- navbar navbar-default Begin -->
@@ -171,8 +107,8 @@ if (isset($_GET['pro_id'])) {
                 <a href="index.php" class="navbar-brand home">
                     <!-- navbar-brand home Begin -->
 
-                    <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
-                    <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                    <img src="images/logo.png" alt="M-dev-Store Logo" class="hidden-xs">
+                    <img src="images/mobile-logo.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
 
                 </a><!-- navbar-brand home Finish -->
 
@@ -313,16 +249,16 @@ if (isset($_GET['pro_id'])) {
                 <ul class="breadcrumb">
                     <!-- breadcrumb Begin -->
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="index.php" class="link-breadcrumb">Home</a>
                     </li>
                     <li>
-                        Shop
+                        <a href="#" class="link-breadcrumb">Shop</a>
                     </li>
 
                     <li>
-                        <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a>
+                        <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>" class="link-breadcrumb"><?php echo $p_cat_title; ?></a>
                     </li>
-                    <li> <?php echo $pro_title; ?> </li>
+                    <li> <a href="#" class="link-breadcrumb"><?php echo $pro_title; ?></a> </li>
                 </ul><!-- breadcrumb Finish -->
 
             </div><!-- col-md-12 Finish -->
@@ -387,21 +323,22 @@ if (isset($_GET['pro_id'])) {
 
                     <div class="col-sm-6">
                         <!-- col-sm-6 Begin -->
-                        <div class="box">
+                        <div>
                             <!-- box Begin -->
-                            <h1 class="text-center"> <?php echo $pro_title; ?> </h1>
+                            <h1 class="text-center title-product"> <?php echo $pro_title; ?> </h1>
 
                             <?php add_cart(); ?>
 
                             <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal"
                                 method="post">
                                 <!-- form-horizontal Begin -->
-                                <div class="form-group">
+                                <div class="form-group text-center">
                                     <!-- form-group Begin -->
-                                    <label for="" class="col-md-5 control-label">Products Quantity</label>
+                                    <label for="" class="col-md-5 control-label title-product">Products Quantity</label>
 
                                     <div class="col-md-7">
                                         <!-- col-md-7 Begin -->
+ 
                                         <select name="product_qty" id="" class="form-control">
                                             <!-- select Begin -->
                                             <option>1</option>
@@ -410,14 +347,13 @@ if (isset($_GET['pro_id'])) {
                                             <option>4</option>
                                             <option>5</option>
                                         </select><!-- select Finish -->
-
                                     </div><!-- col-md-7 Finish -->
 
                                 </div><!-- form-group Finish -->
 
                                 <div class="form-group">
                                     <!-- form-group Begin -->
-                                    <label for="" class="col-md-5 control-label">Product Size</label>
+                                    <label for="" class="col-md-5 control-label title-product">Product Size</label>
 
                                     <div class="col-md-7">
                                         <!-- col-md-7 Begin -->
@@ -438,12 +374,12 @@ if (isset($_GET['pro_id'])) {
                                     </div><!-- col-md-7 Finish -->
                                 </div><!-- form-group Finish -->
 
-                                <p class="price"><?php echo $product_price;
+                                <p class="price price-2"><?php echo $product_price;
                                                     echo  $product_sale_price; ?></p>
 
-                                <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart">
-                                        Add to
-                                        cart</button></p>
+                                <p class="text-center buttons text-button"><button class="btn btn-primary btn-primary i fa fa-shopping-cart">
+                                       <span class="text-button inline"> Add to
+                                        cart</span></button></p>
 
                             </form><!-- form-horizontal Finish -->
 
