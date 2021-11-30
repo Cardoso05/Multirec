@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_delete) {
 
-            echo "<script> alert('One of your term has been Deleted');</script>";
+            echo "<script> alert('Um dos seus termos foi deletado');</script>";
             echo "<script> window.open('index.php?view_terms','_self')</script>";
         }
     }

@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
             <lo class="active">
                 <!-- active Begin -->
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Products
+                <i class="fa fa-dashboard"></i> Dashboard / Ver Produtos
 
             </lo><!-- active Finish -->
 
@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title Begin-->
 
-                    <i class="fa fa-tags"></i> View Products
+                    <i class="fa fa-tags"></i> Ver Produtos
 
                 </h3><!-- panel-title Begin-->
 
@@ -60,15 +60,15 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr Begin-->
 
-                                <th> Product ID: </th>
-                                <th> Product Title: </th>
-                                <th> Product Image: </th>
-                                <th> Product Price: </th>
-                                <th> Product Sold: </th>
-                                <th> Product Keywords: </th>
-                                <th> Product Date: </th>
-                                <th> Product Delete: </th>
-                                <th> Product Edit: </th>
+                                <th> Produto ID: </th>
+                                <th> Produto Titulo: </th>
+                                <th> Produto Imagem: </th>
+                                <th> Produto Preço: </th>
+                                <th> Produto Vendidos: </th>
+                                <th> Produto Palavra-Chave: </th>
+                                <th> Produto Data-Inserção: </th>
+                                <th> Produto Delete: </th>
+                                <th> Produto Edit: </th>
 
                             </tr><!-- tr Begin-->
 

@@ -40,7 +40,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Slide
+                <i class="fa fa-dashboard"></i> Dashboard / Update Slide
 
             </li>
 
@@ -65,7 +65,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Edit Slide
+                    <i class="fa fa-money fa-fw"></i> Update Slide
 
                 </h3><!-- panel-title Finish -->
 
@@ -84,7 +84,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Slide Name
+                            Slide Nome
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -122,7 +122,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Slide Image
+                            Imagem do Slide
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -187,7 +187,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_update_slide) {
 
-            echo "<script> alert('Your Slide has been updated successfully');</script>";
+            echo "<script> alert('Seu slide foi editado');</script>";
             echo "<script> window.open('index.php?view_slides','_self')</script>";
         }
     }

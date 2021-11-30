@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
             <lo class="active">
                 <!-- active Begin -->
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Orders
+                <i class="fa fa-dashboard"></i> Dashboard / Ver Pedidos
 
             </lo><!-- active Finish -->
 
@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title Begin-->
 
-                    <i class="fa fa-tags"></i> View Orders
+                    <i class="fa fa-tags"></i> Ver Pedidos
 
                 </h3><!-- panel-title Begin-->
 
@@ -60,14 +60,14 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr Begin-->
 
-                                <th> No: </th>
-                                <th> Customer Email: </th>
-                                <th> Invoice No: </th>
-                                <th> Product Name: </th>
-                                <th> Product Qty: </th>
-                                <th> Product Size: </th>
-                                <th> Order Date: </th>
-                                <th> Total Amount: </th>
+                                <th> Ordem: </th>
+                                <th> Cliente Email: </th>
+                                <th> Pedido: </th>
+                                <th> Produto Nome: </th>
+                                <th> Produto Qtd: </th>
+                                <th> Produto Tamanho: </th>
+                                <th> Data Pedido: </th>
+                                <th> Valor: </th>
                                 <th> Status: </th>
                                 <th> Delete: </th>
 

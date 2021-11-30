@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
             <lo class="active">
                 <!-- active Begin -->
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Payments
+                <i class="fa fa-dashboard"></i> Dashboard / Ver Pagamentos
 
             </lo><!-- active Finish -->
 
@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title Begin-->
 
-                    <i class="fa fa-tags"></i> View Payments
+                    <i class="fa fa-tags"></i> Ver Pagamentos 
 
                 </h3><!-- panel-title Begin-->
 
@@ -60,14 +60,14 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr Begin-->
 
-                                <th> No: </th>
-                                <th> Invoice No: </th>
-                                <th> Amount Paid: </th>
-                                <th> Method: </th>
-                                <th> Reference No: </th>
-                                <th> Payment Code: </th>
-                                <th> Payment Date: </th>
-                                <th> Delete Payment: </th>
+                                <th> Ordem: </th>
+                                <th> Pedido: </th>
+                                <th> Valor Pago: </th>
+                                <th> Método: </th>
+                                <th> Número de Referencia: </th>
+                                <th> Código de Pagamento: </th>
+                                <th> Data de Pagamento: </th>
+                                <th> Delete Pagamento: </th>
 
                             </tr><!-- tr Begin-->
 

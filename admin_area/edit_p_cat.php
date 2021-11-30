@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Update Product Category
+                <i class="fa fa-dashboard"></i> Dashboard / Update Categoria do Produto
 
             </li>
 
@@ -63,7 +63,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Update Product Category
+                    <i class="fa fa-money fa-fw"></i> Update Categoria do Produto
 
                 </h3><!-- panel-title Finish -->
 
@@ -82,7 +82,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Product Category Title
+                            Titulo da Categoria do Produto
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -102,7 +102,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Chosse As Top Product Category
+                            Escolha se o Produto da Categoria vai ficar no topo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -136,7 +136,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Product Category Image
+                            Categoria do Produto Imagem
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -203,7 +203,7 @@ if (!isset($_SESSION['admin_email'])) {
             $run_p_cat = mysqli_query($con, $update_p_cat);
 
             if ($run_p_cat) {
-                echo "<script>alert('Your new Product Category has been edited')</script>";
+                echo "<script>alert('Sua categoria do produto foi editada')</script>";
                 echo "<script>window.open('index.php?view_p_cats','_self')</script>";
             }
         } else {
@@ -213,7 +213,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             if ($run_p_cat) {
 
-                echo "<script>alert('Your new Product Category has been edited')</script>";
+                echo "<script>alert('Sua categoria do produto foi editada')</script>";
                 echo "<script>window.open('index.php?view_p_cats','_self')</script>";
             }
         }

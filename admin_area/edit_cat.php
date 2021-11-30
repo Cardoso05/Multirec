@@ -35,7 +35,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Update Category
+                <i class="fa fa-dashboard"></i> Dashboard / Update Categoria
 
             </li>
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Update Category
+                    <i class="fa fa-money fa-fw"></i> Update Categoria
 
                 </h3><!-- panel-title Finish -->
 
@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Category Title
+                            Categoria Titulo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -98,7 +98,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Chosse As Top Category
+                            Escolha se a Categoria vai ficar no topo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -132,7 +132,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Category Image
+                            Categoria Imagem
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -197,7 +197,7 @@ if (!isset($_SESSION['admin_email'])) {
             $run_cat = mysqli_query($con, $update_cat);
 
             if ($run_cat) {
-                echo "<script>alert('Your new Category has been edited')</script>";
+                echo "<script>alert('Sua categoria foi editada')</script>";
                 echo "<script>window.open('index.php?view_cats','_self')</script>";
             }
         } else {
@@ -208,7 +208,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             if ($run_cat) {
 
-                echo "<script>alert('Your new Category has been edited')</script>";
+                echo "<script>alert('Sua categoria foi editada')</script>";
                 echo "<script>window.open('index.php?view_cats','_self')</script>";
             }
         }

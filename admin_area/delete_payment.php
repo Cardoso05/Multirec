@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_delete) {
 
-            echo "<script>alert('One of your payment has been deleted')</script>";
+            echo "<script>alert('Um dos seus pagamentos foi deletado')</script>";
 
             echo "<script>window.open('index.php?view_payments','_self')</script>";
         }

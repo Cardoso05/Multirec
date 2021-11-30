@@ -35,7 +35,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Update Manufacturer
+                <i class="fa fa-dashboard"></i> Dashboard / Update Fabricante
 
             </li>
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Update Manufacturer
+                    <i class="fa fa-money fa-fw"></i> Update Fabricante
 
                 </h3><!-- panel-title Finish -->
 
@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Manufacturer Title
+                            Fabricante Titulo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -99,7 +99,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Chosse As Top Manufacturer
+                            Escolha se a Fabricante vai ficar no topo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -133,7 +133,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Manufacturer Image
+                            Fabricante Imagem
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -198,7 +198,7 @@ if (!isset($_SESSION['admin_email'])) {
             $run_manufacturer = mysqli_query($con, $update_manufacturer);
 
             if ($run_manufacturer) {
-                echo "<script>alert('Your new Manufacturer has been edited')</script>";
+                echo "<script>alert('Seu fabricante foi editado')</script>";
                 echo "<script>window.open('index.php?view_manufacturers','_self')</script>";
             }
         } else {
@@ -208,7 +208,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             if ($run_manufacturer) {
 
-                echo "<script>alert('Your new Manufacturer has been edited')</script>";
+                echo "<script>alert('Seu fabricante foi editado')</script>";
                 echo "<script>window.open('index.php?view_manufacturers','_self')</script>";
             }
         }

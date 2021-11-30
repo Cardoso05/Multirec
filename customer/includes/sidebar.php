@@ -52,9 +52,9 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?my_orders">
+                <a href="my_account.php?my_orders" class="link-myaccount" >
 
-                    <i class="fa fa-list"></i> My Orders
+                    <i class="fa fa-list"></i> <span class="link-myaccount">Seus Pedidos</span>
 
                 </a>
 
@@ -64,9 +64,9 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?pay_offline">
+                <a href="my_account.php?pay_offline" class="link-myaccount">
 
-                    <i class="fa fa-bolt"></i> Pay Offline
+                    <i class="fa fa-bolt"></i> <span class="link-myaccount">Pagamentos</span>
 
                 </a>
 
@@ -76,9 +76,9 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?edit_account">
+                <a href="my_account.php?edit_account" class="link-myaccount">
 
-                    <i class="fa fa-pencil"></i> Edit Account
+                    <i class="fa fa-pencil"></i> <span class="link-myaccount">Editar Conta</span>
 
                 </a>
 
@@ -88,9 +88,9 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?change_pass">
+                <a href="my_account.php?change_pass" class="link-myaccount">
 
-                    <i class="fa fa-user"></i> Change Password
+                    <i class="fa fa-user"></i> <span class="link-myaccount">Trocar Senha </span>
 
                 </a>
 
@@ -100,9 +100,9 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?delete_account">
+                <a href="my_account.php?delete_account" class="link-myaccount">
 
-                    <i class="fa fa-trash-o"></i> Delete Account
+                    <i class="fa fa-trash-o"></i> <span class="link-myaccount">Deletar Conta</span>
 
                 </a>
 
@@ -110,9 +110,9 @@
 
             <li>
 
-                <a href="logout.php">
+                <a href="logout.php" class="link-myaccount">
 
-                    <i class="fa fa-sign-out"></i> Log Out
+                    <i class="fa fa-sign-out"></i> <span class="link-myaccount">Log Out</span>
 
                 </a>
 

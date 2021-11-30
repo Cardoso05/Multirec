@@ -29,7 +29,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <li class="active">
                     <!-- active Begin -->
 
-                    <i class="fa fa-dashboard"></i> Dashboard / Insert Products
+                    <i class="fa fa-dashboard"></i> Dashboard / Inserir Produto
 
                 </li><!-- active Finish -->
 
@@ -54,7 +54,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <h3 class="panel-title">
                         <!-- panel-title Begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Insert Product
+                        <i class="fa fa-money fa-fw"></i> Inserir Produto
 
                     </h3><!-- panel-title Finish -->
 
@@ -71,7 +71,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Title</label>
+                        <label class="col-md-3 control-label">Produto Titulo</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -86,7 +86,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Manufacterer</label>
+                        <label class="col-md-3 control-label">Fabricante</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -94,7 +94,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <select name="manufacturer" class="form-control">
                                 <!-- form-control Begin -->
 
-                                <option selected disabled> Select a Manufacturer </option>
+                                <option selected disabled>Selecione Fabricante</option>
 
                                 <?php
 
@@ -126,7 +126,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Category</label>
+                        <label class="col-md-3 control-label">Categoria do Produto</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -134,7 +134,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <select name="product_cat" class="form-control">
                                 <!-- form-control Begin -->
 
-                                <option selected disabled> Select a Category Product</option>
+                                <option selected disabled> Selecione a categoria do produto</option>
 
                                 <?php
 
@@ -166,7 +166,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label"> Category</label>
+                        <label class="col-md-3 control-label"> Categoria</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -174,7 +174,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <select name="cat" class="form-control">
                                 <!-- form-control Begin -->
 
-                                <option selected disabled> Select a Category </option>
+                                <option selected disabled>Selecione a Categoria  </option>
 
                                 <?php
 
@@ -204,7 +204,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Image 1</label>
+                        <label class="col-md-3 control-label">Imagem do Produto 1</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -218,7 +218,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Image 2</label>
+                        <label class="col-md-3 control-label">Imagem do Produto 2</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -232,7 +232,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Image 3</label>
+                        <label class="col-md-3 control-label">Imagem do Produto 3</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -246,7 +246,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Price</label>
+                        <label class="col-md-3 control-label">Preço Produto</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -260,7 +260,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Sale Price</label>
+                        <label class="col-md-3 control-label">Desconto</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -274,7 +274,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Keywords</label>
+                        <label class="col-md-3 control-label">Palavras Chave do Produto</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -288,7 +288,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Desc</label>
+                        <label class="col-md-3 control-label">Descrição Produto</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -302,7 +302,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Product Label</label>
+                        <label class="col-md-3 control-label">Produto Label</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -380,7 +380,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_product) {
 
-            echo "<script>alert('Product has been inserted sucefully');</script>";
+            echo "<script>alert('Seu produto foi inserido');</script>";
 
             echo "<script>window.open('index.php?view_products','_self');</script>";
         }

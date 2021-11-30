@@ -1,13 +1,13 @@
 <center>
     <!--  center Begin  -->
 
-    <h1> My Orders </h1>
+    <h1> Seus Pedidos </h1>
 
-    <p class="lead"> Your orders on one place</p>
+    <p class="lead"> Seus Pedidos em um lugar</p>
 
     <p class="text-muted">
 
-        If you have any questions, feel free to <a href="../contact.php">Contact Us</a>. Our Customer Service work
+        Se você tem alguma pergunta, contacte nós em <a href="../contact.php">Contato</a>. Nosso atendimento é 
         <strong>24/7</strong>
 
     </p>
@@ -30,13 +30,13 @@
             <tr>
                 <!--  tr Begin  -->
 
-                <th> ON: </th>
-                <th> Due Amount: </th>
-                <th> Invoice No: </th>
-                <th> Qty: </th>
-                <th> Size: </th>
-                <th> Order Date:</th>
-                <th> Paid / Unpaid: </th>
+                <th> Ordem: </th>
+                <th> Valor: </th>
+                <th> Num Pedido: </th>
+                <th> Qtd: </th>
+                <th> Tamanho: </th>
+                <th> Data do Pedido:</th>
+                <th> Pagamento: </th>
                 <th> Status: </th>
 
             </tr><!--  tr Finish  -->

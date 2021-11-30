@@ -54,7 +54,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <div class="huge"><?php echo $count_products ?></div>
 
-                        <div>Products</div>
+                        <div>Produtos</div>
 
 
                     </div><!-- col-xs-9 text-right finish-->
@@ -71,7 +71,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                     <span class="pull-left">
                         <!-- pull-left begin-->
-                        View Details
+                        Veja Detalhes
                     </span> <!-- pull-left finish-->
 
                     <span class="pull-right">
@@ -114,7 +114,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <div class="huge"><?php echo $count_customers ?></div>
 
-                        <div>Customers</div>
+                        <div>Clientes</div>
 
 
                     </div><!-- col-xs-9 text-right finish-->
@@ -131,7 +131,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                     <span class="pull-left">
                         <!-- pull-left begin-->
-                        View Details
+                        Veja Detalhes
                     </span> <!-- pull-left finish-->
 
                     <span class="pull-right">
@@ -173,7 +173,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <div class="huge"><?php echo $count_p_categories ?></div>
 
-                        <div>Product Categories</div>
+                        <div>Categoria dos Produtos</div>
 
 
                     </div><!-- col-xs-9 text-right finish-->
@@ -190,7 +190,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                     <span class="pull-left">
                         <!-- pull-left begin-->
-                        View Details
+                        Veja Detalhes
                     </span> <!-- pull-left finish-->
 
                     <span class="pull-right">
@@ -232,7 +232,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <div class="huge"><?php echo $count_pending_orders ?></div>
 
-                        <div>Orders</div>
+                        <div>Pedidos</div>
 
 
                     </div><!-- col-xs-9 text-right finish-->
@@ -249,7 +249,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                     <span class="pull-left">
                         <!-- pull-left begin-->
-                        View Details
+                        Veja Detalhes
                     </span> <!-- pull-left finish-->
 
                     <span class="pull-right">
@@ -278,7 +278,7 @@ if (!isset($_SESSION['admin_email'])) {
             <div class="panel-heading">
                 <!-- panel-heading begin-->
                 <h3 class="panel-title">
-                    <i class="fa fa-money fa-fw"></i> New Orders
+                    <i class="fa fa-money fa-fw"></i> Novos Pedidos
                 </h3>
             </div><!-- panel-heading finish-->
 
@@ -297,12 +297,12 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- th begin-->
 
-                                <th> Order no: </th>
-                                <th> Customer Email: </th>
-                                <th> Invoice No: </th>
-                                <th> Product ID: </th>
-                                <th> Product Qty: </th>
-                                <th> Product Size: </th>
+                                <th> Ordem: </th>
+                                <th> Cliente Email: </th>
+                                <th> Num Pedido: </th>
+                                <th> Produto ID: </th>
+                                <th> Produto Qtd: </th>
+                                <th> Produto Tamanho: </th>
                                 <th> Status: </th>
 
                             </tr><!-- th finish-->
@@ -389,7 +389,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <a href="index.php?view_orders">
                         <!-- a href finish-->
 
-                        View All Orders <i class="fa fa-arrow-circle-right"></i>
+                        Veja Todos os Pedidos <i class="fa fa-arrow-circle-right"></i>
 
                     </a><!-- a href begin-->
 
@@ -432,14 +432,14 @@ if (!isset($_SESSION['admin_email'])) {
                         <!-- widget-content-expanded beign-->
 
                         <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email ?><br>
-                        <i class="fa fa-flag"></i> <span> Country: </span> <?php echo $admin_country ?><br>
-                        <i class="fa fa-envelope"></i> <span> Contact: </span> <?php echo $admin_contact ?><br>
+                        <i class="fa fa-flag"></i> <span> Pais: </span> <?php echo $admin_country ?><br>
+                        <i class="fa fa-envelope"></i> <span> Contato: </span> <?php echo $admin_contact ?><br>
 
                     </div><!-- widget-content-expanded finish-->
 
                     <hr class="dotted short " style="margin-top: 10px 0 10px 0;">
 
-                    <h5 class="text-muted"> About Me </h5>
+                    <h5 class="text-muted"> Sobre mim: </h5>
 
                     <p> <?php echo $admin_about ?></p>
 

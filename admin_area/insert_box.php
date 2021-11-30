@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Box
+                <i class="fa fa-dashboard"></i> Dashboard / Inserir Box
 
             </li>
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Insert Box
+                    <i class="fa fa-money fa-fw"></i> Inserir Box
 
                 </h3><!-- panel-title Finish -->
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Box Title
+                            Box Titulo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -98,7 +98,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Box Desc
+                            Descrição Box
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -161,11 +161,11 @@ if (!isset($_SESSION['admin_email'])) {
             $run_insert = mysqli_query($con, $insert_box);
 
             if ($run_insert) {
-                echo "<script>alert('Your new box image has been inserted')</script>";
+                echo "<script>alert('Sua box foi inserida')</script>";
                 echo "<script>window.open('index.php?view_box','_self')</script>";
             }
         } else {
-            echo "<script>alert('Your have already 3 boxes')</script>";
+            echo "<script>alert('Já existem 3 box inseridas')</script>";
         }
     }
 

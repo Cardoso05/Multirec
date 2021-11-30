@@ -1,18 +1,28 @@
 /*
-Template Name     : M-Dev Store
-Author Name       : MrGhie
-Author Email      : mugianto1nd@gmail.com
-Theme URI         : www.m-dev-store.com | localhost/m-dev-store
-Theme Ver         : 1.1
+Author Name       : Matheus Cardoso
 */
 
 /* General Styles */
+/* fonts */
+@font-face {
+    font-family: Ageo;
+    src: url(../fonts/AgeoPersonalUse.otf);
+}
+
+@font-face {
+    font-family: Ageo-Bold;
+    src: url(../fonts/AgeoPersonalUse-Bold.otf);
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: Ageo ;
+}
+/* fonts */
 
 body{
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
-    background: #f0f0f0;
+    background: #1f1f1f;
     overflow-x: hidden;
 }
 
@@ -74,6 +84,9 @@ body{
 .navbar-collapse .right{
     float: right;
 }
+.navbar-brand>img{
+    padding-left: 10px;
+}
 .navbar-brand{
     float: left;
     padding: 10px 15px;
@@ -89,24 +102,21 @@ body{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
+    color: white;
 }
 .navbar ul.nav > li > a:hover{
-    background: #e7e7e7;
+    color: #c8ff01;
+    background-color: black !important;
 }
 .padding-nav{
     padding-top: 10px;
-}
-.btn-primary{
-    color: rgb(255, 255, 255);
-    background: rgb(79, 191, 168);
-    border-color: rgb(65, 179, 156);
 }
 #search .navbar-form{
     float: right;
 }
 #search{
     clear: both;
-    border-top: solid 1px #9adacd;
+    border-top: solid 1px gray;
     text-align: right;
 }
 #search .navbar-form .input-group{
@@ -169,13 +179,16 @@ body{
 #hot h2{
     font-size: 36px;
     font-weight: 400;
-    color: #4fbfa8;
+    color: white;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 80px;
+    font-family: Ageo-bold;
 }
-#content{
-   padding-left: 25px; 
+#hot{
+    background-color: #1f1f1f;
 }
+
 .single{
     width: 290px;
 }
@@ -187,9 +200,9 @@ body{
 }
 #content .product{
     background: #ffffff;
-    border: solid 1px #e6e6e6;
     margin-bottom: 30px;
     box-sizing: border-box;
+    border-radius: 0px 0px 15px 15px;
 }
 #content .product .text{
     padding: 10px 10px 0px;
@@ -211,7 +224,7 @@ body{
     font-size: 20px;
 }
 #content .product .text h3 a{
-    color: rgb(85, 85, 85);
+    color: black;
 }
 
 /*  Breadcrumb Styles  */
@@ -219,19 +232,22 @@ body{
 .breadcrumb{
     padding: 8px 15px;
     margin-bottom: 20px;
-    background: #ffffff;
+    background: #658100;
     border-radius: 5px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
 }
 .breadcrumb> li + li:before{
     content: ">\00a0";
-    color: #cccccc;
+    color: black;
 }
 @media(max-width:991px){
     .breadcrumb{
         padding: 8px 0px;
         text-align: center;
     }
+}
+.link-breadcrumb {
+    color: white;
 }
 
 /*  Products Categories & Categories Styles */
@@ -350,7 +366,7 @@ body{
 /*  Footer Styles  */
 
 #footer{
-    background: #e0e0e0;
+    background: #181818;
     padding: 20px 0;
 }
 #footer a{
@@ -386,7 +402,9 @@ body{
     color: #dedede;
     background: #777777;
 }
-
+.col-sm-6 > h4{
+ color: white;
+}
 /*  Copyright Styles  */
 
 #copyright{
@@ -397,7 +415,232 @@ body{
 }
 #copyright p{
     margin: 0px;
+} 
+.nav.category-menu{
+    margin-top: -26px;
+}
+.scroll-menu{
+    height: 260px;
+} 
+.checkbox span{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+    color: white;
+}   
+.checkbox:hover span:hover{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+    color: black;
+} 
+.checkbox span::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.2s, color 0.2s ease-in-out;
+    background: #fff;
+}            
+.checkbox span:after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    top: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555;
+
+}
+.checkbox input[type='checkbox']{
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+.checkbox input[type='checkbox']:focus + span::before{
+    outline: thin dotted;
+    outline: 5px auto;
+    outline-offset: -2px;
+}
+
+.checkbox input[type='checkbox']:checked + span::after{
+    font-family: "FontAwesome";
+    content: "\f00c";
+}
+
+.checkbox-primary input[type='checkbox']:focus + span::before{
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.checkbox-primary input[type='checkbox']:focus + span::after{
+    color: #fff;
+}                             
+.product a img.img-responsive{
+    max-height: 253px;
+    width: 100%;
+}
+/* styling the label begin */
+
+
+.label{
+    color: #000;
+    text-transform: uppercase;  
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    top: 10px;
+    padding-left: 51px;  
+    z-index: 20px;
+    
+
+}
+
+.label .labelBakcground{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
+.label .theLabel{
+    position: relative;
+    width: 100px;
+    padding: 6px 50px 6px 15px;
+    margin: 10px 50px 10px -73px;
+    color: #fff;
+}
+.label.sale .theLabel{
+    color: #fff;
+}
+.label.sale .theLabel{
+    background: #475b00;
+}
+.label.new .theLabel{
+    background: #658100;
+}
+.label .theLabel:before,
+.label .theLabel:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.label .theLabel:after{
+    left: 0;
+    top: 100%;
+    border-width: 5px 10px;
+    border-style: solid;
+    border-color: #000 #000 transparent transparent ;
+}
+.btn-primary{
+    background-color: #c8ff01 !important;
+    border-color: #c8ff01 !important;
+    color: black;
+}
+#navbar{
+    background-color: #1f1f1f;
+}
+.navbar ul.nav > li > a{
+    font-family: Ageo;
+    letter-spacing: 1px;
+}
+
+/* styling the label finish */
+
+.box-login{
+    background-color: #658100 !important;
+    border-radius: 20px;
+}
+.panel-body{
+    background-color: #658100 ;
+}
+.panel-default>.panel-heading{
+    background-color:   #475b00;
+}
+.panel{
+    border: 0px;
+}
+.panel-title {
+    color: white;
+}
+.hide-show{
+    color: white;
+} 
+.active-checkbox{
+    background:#475b00;
+}
+.title-login{
+    font-family: Ageo-Bold;
+    color: white;
+    font-size: 35px;
+}
+.form-login{
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);                                                             
+}
+.login-input{
+    width: 200px;
+    border-radius: 10px;
+}
+.login-input::placeholder{
+    font-family: Ageo;
+    color: gray;
+}
+.btn-login{
+    width: 150px;
+    text-align: center;
+    border: 2px solid black !important;
+    border-radius: 10px;
+}
+.register{
+    color: white;
+    font-family: Ageo-Bold;
+}
+
+.register:hover{
+    color: white;
+    font-family: Ageo-Bold;
+    
+}
+.box{
+    border-width: 0px !important;
+}
+.navbar-default{
+    border-width: 0;
+}
+.navbar-toggle{
+    background-color: white;
+}
+.title-product{
+    color: white;
+}
+
+.text-button{
+    font-family: Ageo;
+}
+.price-2{
+    color: white;
 }
 .img_customer{
     max-width: 100%;
+}
+.link-myaccount{
+    color: white;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    background-color: #475b00;
 }

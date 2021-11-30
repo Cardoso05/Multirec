@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_delete) {
 
-            echo "<script>alert('One of your User has been Deleted')</script>";
+            echo "<script>alert('Um admin foi deletado')</script>";
 
             echo "<script>window.open('index.php?view_users','_self')</script>";
         }

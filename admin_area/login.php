@@ -67,7 +67,7 @@ if (isset($_POST['admin_login'])) {
 
         $_SESSION['admin_email'] = $admin_email;
 
-        echo "<script> alert('Logged in. Welcome Back');</script>";
+        echo "<script> alert('Logged in. Bem vindo');</script>";
 
         echo "<script> window.open('index.php?dashboard','_self');</script>";
     } else {

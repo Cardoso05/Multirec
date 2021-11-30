@@ -1,11 +1,11 @@
 <center><!--  center Begin  -->
     
-    <h1> Pay Offline Using Method </h1>
+    <h1> Tipos de Pagamentos cadastrados</h1>
     
     <p class="text-muted">
         
-        If you have any questions, feel free to <a href="../contact.php">Contact Us</a>. Our Customer Service work <strong>24/7</strong>
-        
+    Se você tem alguma pergunta, contacte nós em <a href="../contact.php">Contato</a>. Nosso atendimento é 
+        <strong>24/7</strong>        
     </p>
     
 </center><!--  center Finish  -->
@@ -22,7 +22,7 @@
             
             <tr><!--  tr Begin  -->
             
-                <th> Bank Account Details: </th>
+                <th> Detalhes do Banco </th>
                 <th> Easy Paisa, UBL Omni, Mobi Cash Details: </th>
                 <th> Western Union Details: </th>
 

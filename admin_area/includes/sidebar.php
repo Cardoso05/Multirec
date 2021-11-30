@@ -56,7 +56,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <a href="index.php?view_products">
                         <!-- a href begin -->
 
-                        <i class="fa fa-fw fa-envelope"></i> Products
+                        <i class="fa fa-fw fa-envelope"></i> Produtos
 
                         <span class="badge"><?php echo $count_products; ?></span>
 
@@ -68,7 +68,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <a href="index.php?view_customers">
                         <!-- a href begin -->
 
-                        <i class="fa fa-fw fa-users"></i> Customers
+                        <i class="fa fa-fw fa-users"></i> Clientes
 
                         <span class="badge"><?php echo $count_customers; ?></span>
 
@@ -80,7 +80,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <a href="index.php?view_cats">
                         <!-- a href begin -->
 
-                        <i class="fa fa-fw fa-gear"></i> Product Categories
+                        <i class="fa fa-fw fa-gear"></i> Categoria do Produto
 
                         <span class="badge"><?php echo $count_p_categories; ?></span>
 
@@ -125,7 +125,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <a href="#" data-toggle="collapse" data-target="#products">
                     <!-- a href begin -->
 
-                    <i class="fa fa-fw fa-tag"></i> Products
+                    <i class="fa fa-fw fa-tag"></i> Produtos
                     <i class="fa fa-fw fa-caret-down"></i>
 
                 </a><!-- a href finish -->
@@ -134,11 +134,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_product"> Insert Product </a>
+                        <a href="index.php?insert_product"> Inserir Produtos </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_products"> View Products </a>
+                        <a href="index.php?view_products"> Ver Produtos </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -148,7 +148,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <a href="#" data-toggle="collapse" data-target="#manufacturer">
                     <!-- a href begin -->
 
-                    <i class="fa fa-fw fa-star"></i> Manufacturer
+                    <i class="fa fa-fw fa-star"></i> Fabricantes
                     <i class="fa fa-fw fa-caret-down"></i>
 
                 </a><!-- a href finish -->
@@ -157,11 +157,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_manufacturer"> Insert Manufacturer </a>
+                        <a href="index.php?insert_manufacturer"> Inserir Fabricantes </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_manufacturers"> View Manufacturer </a>
+                        <a href="index.php?view_manufacturers"> Ver Fabricantes </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -172,7 +172,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <a href="#" data-toggle="collapse" data-target="#p_cat">
                     <!-- a href begin -->
 
-                    <i class="fa fa-fw fa-edit"></i> Products Categories
+                    <i class="fa fa-fw fa-edit"></i> Categoria dos Produtos
                     <i class="fa fa-fw fa-caret-down"></i>
 
                 </a><!-- a href finish -->
@@ -181,11 +181,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_p_cat"> Insert Product Category </a>
+                        <a href="index.php?insert_p_cat"> Inserir Categoria dos Produtos </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_p_cats"> View Products Categories </a>
+                        <a href="index.php?view_p_cats"> Ver Categoria dos Produtos </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -196,7 +196,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <a href="#" data-toggle="collapse" data-target="#cat">
                     <!-- a href begin -->
 
-                    <i class="fa fa-fw fa-book"></i> Categories
+                    <i class="fa fa-fw fa-book"></i> Categoria
                     <i class="fa fa-fw fa-caret-down"></i>
 
                 </a><!-- a href finish -->
@@ -205,11 +205,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_cat"> Insert Category </a>
+                        <a href="index.php?insert_cat"> Inserir Categoria </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_cats"> View Categories </a>
+                        <a href="index.php?view_cats"> Ver Categoria </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -229,11 +229,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_slide"> Insert Slide </a>
+                        <a href="index.php?insert_slide"> Inserir Slide </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_slides"> View Slides </a>
+                        <a href="index.php?view_slides"> Ver Slides </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -253,11 +253,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_box"> Insert Box </a>
+                        <a href="index.php?insert_box"> Inserir Box </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_boxes"> View Box </a>
+                        <a href="index.php?view_boxes"> Ver Box </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -268,7 +268,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <a href="#" data-toggle="collapse" data-target="#terms">
                     <!-- a href begin -->
 
-                    <i class="fa fa-fw fa-table"></i> Terms
+                    <i class="fa fa-fw fa-table"></i> Termos
                     <i class="fa fa-fw fa-caret-down"></i>
 
                 </a><!-- a href finish -->
@@ -277,11 +277,11 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_terms"> Insert Terms </a>
+                        <a href="index.php?insert_terms"> Inserir Termos </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_terms"> View Terms </a>
+                        <a href="index.php?view_terms"> Ver Termos </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 
@@ -291,7 +291,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <!-- li begin -->
                 <a href="index.php?view_customers">
                     <!-- a href begin -->
-                    <i class="fa fa-fw fa-users"></i> View Customers
+                    <i class="fa fa-fw fa-users"></i> Ver Clientes
                 </a><!-- a href finish -->
             </li><!-- li finish -->
 
@@ -299,7 +299,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <!-- li begin -->
                 <a href="index.php?view_orders">
                     <!-- a href begin -->
-                    <i class="fa fa-fw fa-book"></i> View Orders
+                    <i class="fa fa-fw fa-book"></i> Ver Pedidos
                 </a><!-- a href finish -->
             </li><!-- li finish -->
 
@@ -307,7 +307,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <!-- li begin -->
                 <a href="index.php?view_payments">
                     <!-- a href begin -->
-                    <i class="fa fa-fw fa-money"></i> View Payments
+                    <i class="fa fa-fw fa-money"></i> Ver Pagamentos
                 </a><!-- a href finish -->
             </li><!-- li finish -->
 
@@ -324,7 +324,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <a href="#" data-toggle="collapse" data-target="#users">
                     <!-- a href begin -->
 
-                    <i class="fa fa-fw fa-users"></i> Users
+                    <i class="fa fa-fw fa-users"></i> Admins
                     <i class="fa fa-fw fa-caret-down"></i>
 
                 </a><!-- a href finish -->
@@ -333,15 +333,15 @@ if (!isset($_SESSION['admin_email'])) {
                     <!-- collapse begin -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?insert_user"> Insert User </a>
+                        <a href="index.php?insert_user"> Inserir Admins </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?view_users"> View Users </a>
+                        <a href="index.php?view_users"> Ver Admin </a>
                     </li><!-- li finish -->
                     <li>
                         <!-- li begin -->
-                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit User Profile </a>
+                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edite Seu Profile </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
 

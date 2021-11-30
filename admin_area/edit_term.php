@@ -40,7 +40,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Term
+                <i class="fa fa-dashboard"></i> Dashboard / Update Termos
 
             </li>
 
@@ -65,7 +65,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Edit Term
+                    <i class="fa fa-money fa-fw"></i> Update Termos
 
                 </h3><!-- panel-title Finish -->
 
@@ -84,7 +84,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Term title
+                            Titulo termo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -104,7 +104,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Term Link
+                            Link do termo 
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -122,7 +122,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Term Desc
+                            Descrição Termo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -181,7 +181,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_update_term) {
 
-            echo "<script> alert('Your Term has been updated successfully');</script>";
+            echo "<script> alert('Seu termo foi editado');</script>";
             echo "<script> window.open('index.php?view_terms','_self')</script>";
         }
     }

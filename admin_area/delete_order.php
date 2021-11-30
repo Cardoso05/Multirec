@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_delete) {
 
-            echo "<script>alert('One of your pending order has been deleted')</script>";
+            echo "<script>alert('Um dos seus pedidos foi deletado')</script>";
 
             echo "<script>window.open('index.php?view_orders','_self')</script>";
         }

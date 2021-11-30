@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Category
+                <i class="fa fa-dashboard"></i> Dashboard / Ver Categorias
 
             </li>
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-tags fa-fw"></i> View Categories
+                    <i class="fa fa-tags fa-fw"></i> Ver categorias
 
                 </h3><!-- panel-title Finish -->
 
@@ -63,12 +63,12 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr begin -->
 
-                                <th> Category Id</th>
-                                <th> Category Title</th>
-                                <th> Category Image</th>
-                                <th> Category Top</th>
-                                <th> Delete Category </th>
-                                <th> Edit Category </th>
+                                <th> Categoria Id</th>
+                                <th> Categoria Titulo</th>
+                                <th> Categoria Imagem</th>
+                                <th> Categoria Top</th>
+                                <th> Delete Categoria </th>
+                                <th> Edit Categoria </th>
 
                             </tr><!-- tr Finish -->
 

@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Manufacturer
+                <i class="fa fa-dashboard"></i> Dashboard / Inserir Fabricante
 
             </li>
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Insert Manufacturer
+                    <i class="fa fa-money fa-fw"></i> Inserir Fabricante
 
                 </h3><!-- panel-title Finish -->
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Manufacturer Title
+                            Titulo Fabricante
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Chosse As Top Manufacturer
+                            Escolha se o Fabricante vai ficar no topo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -87,10 +87,10 @@ if (!isset($_SESSION['admin_email'])) {
                             <!-- col-md-6 Begin-->
 
                             <input type="radio" name="manufacturer_top" value="yes">
-                            <label for="">Yes</label>
+                            <label for="">Sim</label>
 
                             <input type="radio" name="manufacturer_top" value="no">
-                            <label for="">No</label>
+                            <label for="">Não</label>
 
                         </div><!-- col-md-6 Finish-->
 
@@ -102,7 +102,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Manufacturer Image
+                            Fabricante Imagem
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -162,7 +162,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         $run_manufacturer = mysqli_query($con, $insert_manufacturer);
 
-        echo "<script>alert('Your new Manufacturer has been inserted')</script>";
+        echo "<script>alert('Seu Fabricante foi inserido')</script>";
         echo "<script>window.open('index.php?view_manufacturers','_self')</script>";
     }
 

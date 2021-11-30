@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_email'])) {
             <lo class="active">
                 <!-- active Begin -->
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Users
+                <i class="fa fa-dashboard"></i> Dashboard / Ver Slides
 
             </lo><!-- active Finish -->
 
@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title Begin-->
 
-                    <i class="fa fa-tags"></i> View Users
+                    <i class="fa fa-tags"></i> Ver Slides
 
                 </h3><!-- panel-title Begin-->
 
@@ -60,13 +60,13 @@ if (!isset($_SESSION['admin_email'])) {
                             <tr>
                                 <!-- tr Begin-->
 
-                                <th> No: </th>
-                                <th> User Name: </th>
-                                <th> User Image: </th>
-                                <th> User E-mail: </th>
-                                <th> User Country: </th>
-                                <th> User Job: </th>
-                                <th> User Contact: </th>
+                                <th> Ordem: </th>
+                                <th> Admin Nome: </th>
+                                <th> Admin Imagem: </th>
+                                <th> Admin E-mail: </th>
+                                <th> Admin País: </th>
+                                <th> Admin Cargo: </th>
+                                <th> Admin Contato: </th>
                                 <th> Edit: </th>
                                 <th> Delete: </th>
 

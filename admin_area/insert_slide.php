@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Slide
+                <i class="fa fa-dashboard"></i> Dashboard / Inserir Slide
 
             </li>
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Insert Slide
+                    <i class="fa fa-money fa-fw"></i> Inserir Slide
 
                 </h3><!-- panel-title Finish -->
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Slide Name
+                            Nome Slide
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -98,7 +98,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Slide Image
+                            Slide Imagem
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -165,7 +165,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             $run_slide = mysqli_query($con, $insert_slide);
 
-            echo "<script>alert('Your new slide image has been inserted')</script>";
+            echo "<script>alert('Seu Slide foi inserido')</script>";
             echo "<script>window.open('index.php?view_slides','_self')</script>";
         } else {
             echo "<script>alert('Your have already 4 slides')</script>";

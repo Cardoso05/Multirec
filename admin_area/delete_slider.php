@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin_email'])) {
 
         if ($run_delete) {
 
-            echo "<script> alert('One of your Slide has been Deleted');</script>";
+            echo "<script> alert('Um dos seus slides do carrousel foi deletado');</script>";
             echo "<script> window.open('index.php?view_slides','_self')</script>";
         }
     }

@@ -1,11 +1,11 @@
-<h1 align="center"> Change Password </h1>
+<h1 align="center"> Troque a Senha </h1>
 
 
 <form action="" method="post"><!-- form Begin -->
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Your Old Password: </label>
+        <label> Senha Antiga: </label>
         
         <input type="text" name="old_pass" class="form-control" required>
         
@@ -13,7 +13,7 @@
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Your New Password: </label>
+        <label> Senha Nova: </label>
         
         <input type="text" name="new_pass" class="form-control" required>
         
@@ -21,7 +21,7 @@
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Confirm Your New Password: </label>
+        <label> Confirme Sua Nova Senha: </label>
         
         <input type="text" name="new_pass_again" class="form-control" required>
         
@@ -31,7 +31,7 @@
         
         <button type="submit" name="submit" class="btn btn-primary"><!-- btn btn-primary Begin -->
             
-            <i class="fa fa-user-md"></i> Update Now
+            <i class="fa fa-user-md"></i> Edite Agora
             
         </button><!-- btn btn-primary inish -->
         

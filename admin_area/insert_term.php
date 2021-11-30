@@ -29,7 +29,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <li class="active">
                     <!-- active Begin -->
 
-                    <i class="fa fa-dashboard"></i> Dashboard / Create Term
+                    <i class="fa fa-dashboard"></i> Dashboard / Inserir Termo
 
                 </li><!-- active Finish -->
 
@@ -54,7 +54,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <h3 class="panel-title">
                         <!-- panel-title Begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Create Term
+                        <i class="fa fa-money fa-fw"></i> Inserir Termo
 
                     </h3><!-- panel-title Finish -->
 
@@ -71,7 +71,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Term Title</label>
+                        <label class="col-md-3 control-label">Titulo Termo</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -85,7 +85,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Term Link</label>
+                        <label class="col-md-3 control-label">Termo Link</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -101,7 +101,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="form-group">
                         <!-- form-group Begin -->
 
-                        <label class="col-md-3 control-label">Term Desc</label>
+                        <label class="col-md-3 control-label">Termo Descrição</label>
 
                         <div class="col-md-6">
                             <!-- col-md-6 Begin -->
@@ -159,7 +159,7 @@ if (isset($_POST['submit'])) {
 
     if ($run_term) {
 
-        echo "<script>alert('Your Term Has Been Created')</script>";
+        echo "<script>alert('Seu termo foi inserido')</script>";
 
         echo "<script>window.open('index.php?view_terms','_self')</script>";
     }

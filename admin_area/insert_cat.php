@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_email'])) {
 
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Category
+                <i class="fa fa-dashboard"></i> Dashboard / Inserir Categoria
 
             </li>
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3 class="panel-title">
                     <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Insert Category
+                    <i class="fa fa-money fa-fw"></i> Inserir Categoria
 
                 </h3><!-- panel-title Finish -->
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Category Title
+                            Categoria Titulo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_email'])) {
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
 
-                            Chosse As Top Category
+                            Escolha se a Categoria vai ficar no topo
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -87,10 +87,10 @@ if (!isset($_SESSION['admin_email'])) {
                             <!-- col-md-6 Begin-->
 
                             <input type="radio" name="cat_top" value="yes">
-                            <label for="">Yes</label>
+                            <label for="">Sim</label>
 
                             <input type="radio" name="cat_top" value="no">
-                            <label for="">No</label>
+                            <label for="">Não</label>
 
                         </div><!-- col-md-6 Finish-->
 
@@ -102,7 +102,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                         <label for="" class="control-label col-md-3">
                             <!-- control-label col-md-3 Begin-->
-                            Category Image
+                            Imagem da Categoria
 
                         </label><!-- control-label col-md-3 Finish-->
 
@@ -161,7 +161,7 @@ if (!isset($_SESSION['admin_email'])) {
         $run_cat = mysqli_query($con, $insert_cat);
 
         if ($run_cat) {
-            echo "<script> alert('Your New Category Has Been Inserted');</script>";
+            echo "<script> alert('Sua categoria foi inserida');</script>";
             echo "<script> window.open('index.php?view_cats','_self')</script>";
         }
     }

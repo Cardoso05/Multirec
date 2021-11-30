@@ -117,7 +117,7 @@ if (!isset($_SESSION['admin_email'])) {
         fwrite($handle, $newdata);
         fclose($handle);
 
-        echo "<script>alert('Your CSS Has Been Updated')</script>";
+        echo "<script>alert('Seu CSS foi editado')</script>";
         echo "<script>window.open('index.php?edit_css','_self')</script>";
     }
 
