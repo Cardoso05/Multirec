@@ -638,3 +638,6 @@ body{
 .img_customer{
     max-width: 100%;
 }
+.box{
+    border-radius: 0px 0px 15px 15px;
+}
