@@ -90,33 +90,23 @@ include("includes/header.php")
                     <?php
 
                     if (isset($_POST['submit'])) {
-                        //admin receives message with this
+                        
+                        $contact_name = $_POST['name'];
+                        
+                        $contact_subject = $_POST['subject'];
+                        
+                        $contact_email = $_POST['email'];
+                        
+                        $contact_msg = $_POST['message'];
+                        
+                        $insert_contact = "insert into contact (contact_name,contact_subject,contact_email,contact_msg) values ('$contact_name','$contact_subject','$contact_email','$contact_msg')";
 
-                        $sender_name = $_POST['name'];
+                        $run_contact = mysqli_query($con, $insert_contact);
 
-                        $sender_email = $_POST['email'];
-
-                        $sender_subject = $_POST['subject'];
-
-                        $sender_message = $_POST['message'];
-
-                        $receiver_email = "matheuszekka@gmail.com";
-
-                        mail($receiver_email, $sender_email, $sender_subject, $sender_message);
-
-                        /// auto reply to sender with this ///
-
-                        $email = $_POST['email'];
-
-                        $subject = "Welcome to my website";
-
-                        $msg = "Thanks for sending us message. ASAP we will replay your message";
-
-                        $from = "matheuszekka@gmail.com";
-
-                        mail($email . $subject, $msg, $from);
-
-                        echo "<h2>Your message has sent sucessfully </h2>";
+                        if ($run_contact) {
+                            
+                            echo"<script>alert('Seu contato foi enviado');</script>";
+                        }
                     }
 
                     ?>

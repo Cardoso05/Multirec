@@ -91,7 +91,7 @@ if (!isset($_SESSION['customer_email'])) {
                                 echo "<a href='checkout.php'>Conta</a>";
                             } else {
 
-                                echo "<a href='customer/my_account.php?my_orders'>Conta</a>";
+                                echo "<a href='my_account.php?my_orders'>Conta</a>";
                             }
 
                             ?>
