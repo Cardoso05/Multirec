@@ -108,7 +108,7 @@ if (!isset($_SESSION['customer_email'])) {
 
                 </div><!-- padding-nav Finish -->
 
-                <a href="cart.php" class="btn navbar-btn btn-primary right">
+                <a href="../cart.php" class="btn navbar-btn btn-primary right">
                     <!-- btn navbar-btn btn-primary Begin -->
 
                     <i class="fa fa-shopping-cart"></i>

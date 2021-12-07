@@ -85,13 +85,16 @@ include("includes/header.php");
         <div class="col-md-12">
             <!-- col-md-12 Begin -->
 
+ 
+            <img class="img-responsive" src="images/shop-banner.jpg" alt="">
+
             <ul class="breadcrumb">
                 <!-- breadcrumb Begin -->
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="index.php" class="link-breadcrumb">Home</a>
                 </li>
                 <li>
-                    Shop
+                    <a href="#" class="link-breadcrumb">Shop</a>
                 </li>
             </ul><!-- breadcrumb Finish -->
 
